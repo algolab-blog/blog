@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog.alogolab.jp</title>
+    <link>http://blog.algolab.jp/</link>
+    <description>Recent content on blog.alogolab.jp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Tue, 05 Jul 2016 14:21:01 +0900</lastBuildDate>
+    <atom:link href="http://blog.algolab.jp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hello world</title>
+      <link>http://blog.algolab.jp/posts/2016/07/05/hello-world/</link>
+      <pubDate>Tue, 05 Jul 2016 14:21:01 +0900</pubDate>
+      
+      <guid>http://blog.algolab.jp/posts/2016/07/05/hello-world/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
