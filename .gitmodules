@@ -1,0 +1,3 @@
+[submodule "algolab-blog.github.io"]
+	path = algolab-blog.github.io
+	url = git@github.com:algolab-blog/algolab-blog.github.io.git
