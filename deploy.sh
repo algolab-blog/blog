@@ -17,7 +17,7 @@ if [ $# -eq 1 ]
 fi
 git commit -m "$msg"
 
-# Push source and build repos.
+# Push submodule repos
 git push origin master
 
 # Come Back
