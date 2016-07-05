@@ -5,7 +5,8 @@ title = "blog.alogolab.jp"
 
 [Params]
 subtitle = "人工知能・ロボットについて"
-showRSS = true
+showsRSS = true
+disqusShortname = "algloab"
 copyright = "© 2016 Algo Lab Inc."
 analytics = "UA-70610940-1"
 shareThis = "68ab120e-79d6-4b3c-ae2e-4e7f8099de14"

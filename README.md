@@ -2,6 +2,7 @@
 ## Usage
 ### Setup
 ```
+go get -u -v github.com/spf13/hugo
 git clone git@github.com:algolab-blog/blog.git --recursive
 ```
 
