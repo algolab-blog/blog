@@ -5,7 +5,7 @@ title = "blog.alogolab.jp"
 disqusShortname = "algolab"
 
 [Params]
-subtitle = "人工知能・ロボットについて"
+subtitle = "株式会社アルゴラボのブログ。人工知能・ロボットについて。"
 showsRSS = true
 copyright = "© 2016 Algo Lab Inc."
 analytics = "UA-70610940-1"
