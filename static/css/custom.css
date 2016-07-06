@@ -1,3 +1,23 @@
+body {
+  color: #111;
+}
+
+header a, main#index a {
+  color: #111 !important;
+}
+
+header h2 {
+  color: #333;
+}
+
+main#index a:hover {
+  text-decoration: underline;
+}
+
 .article-header {
   border-color: #999;
+}
+
+article img {
+  margin: 0;
 }

@@ -1,0 +1,10 @@
+<div class="meta">
+  <span>{{ .Date.Format "2006/01/02" }}</span>
+  {{ if .Params.tags }}
+    <span>|</span>
+    {{ range .Params.tags }}
+      <a href="/tags/{{ . | urlize }}">#{{ . }}</a>&nbsp;
+    {{ end }}
+  {{ end }}
+  {{ with .Params.author }}<span>|&nbsp;{{ . }}{{end}}</span>
+</div>
