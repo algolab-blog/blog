@@ -2,7 +2,7 @@
 echo -e "Deploying updates to GitHub..."
 
 # Clean up
-# rm -rf public/*
+rm -rf public/*
 
 # Build the project.
 hugo # if using a theme, replace by `hugo -t <yourtheme>`
