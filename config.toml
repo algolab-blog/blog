@@ -1,7 +1,7 @@
 baseurl = "http://blog.algolab.jp/"
 theme = "angels-ladder"
 languageCode = "ja"
-title = "algolab blog"
+title = "ALGO GEEKS"
 disqusShortname = "algolab"
 
 [Params]
