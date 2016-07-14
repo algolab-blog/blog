@@ -1,11 +1,12 @@
 baseurl = "http://blog.algolab.jp/"
 theme = "angels-ladder"
 languageCode = "ja"
-title = "ALGOGEEKS"
+title = "ALGO GEEKS"
 disqusShortname = "algolab"
+hasCJKLanguage = true
 
 [Params]
-subtitle = "人工知能・ロボットを中心とした情報を発信"
+subtitle = "人工知能・ロボットについての実践ログ"
 showsRSS = true
 copyright = "© 2016 Algo Lab Inc."
 analytics = "UA-70610940-1"

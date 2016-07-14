@@ -23,13 +23,12 @@
 	ga('send', 'pageview');
 </script>{{ end }}
 
-{{ with .Site.Params.speaklyn }}<script type="text/javascript">
+{{ with .Site.Params.speaklyn }}<script>
 (function(d, t) {
    var a = d.createElement(t), s = d.getElementsByTagName(t)[0];
    a.async = a.src = '//cdn.speaklyn.com/{{ . }}.js';
    s.parentNode.insertBefore(a, s);
 }(document, 'script'));
 </script>{{ end }}
-
 </body>
 </html>

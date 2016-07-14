@@ -2,7 +2,7 @@ body {
   color: #111;
 }
 
-header a, main#index a {
+header a, main#index h2 a {
   color: #111 !important;
 }
 
@@ -10,7 +10,16 @@ header h2 {
   color: #333;
 }
 
-main#index a:hover {
+main#index .summary p {
+  margin-top: 10px;
+}
+
+main#index h2 a:hover {
+  text-decoration: underline;
+}
+
+main#index .summary .permalink {
+  text-align: right;
   text-decoration: underline;
 }
 

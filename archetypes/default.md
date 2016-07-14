@@ -1,14 +1,9 @@
 +++
+author = "Shinpei Kawahito"
 date = "now()"
-draft = true
-title = ""
-tags = []
-author = ""
 post = true
+draft = true
+tags = []
+title = ""
 
 +++
-
-First Header   | Second Header
--------------  | -------------
-*Content Cell* | Content Cell
-Content Cell   | Content Cell
