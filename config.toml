@@ -6,7 +6,7 @@ disqusShortname = "algolab"
 hasCJKLanguage = true
 
 [Params]
-subtitle = "株式会社アルゴラボ　公式ブログ"
+subtitle = "by 株式会社アルゴラボ"
 showsRSS = true
 copyright = "© 2016 Algo Lab Inc."
 analytics = "UA-70610940-1"
