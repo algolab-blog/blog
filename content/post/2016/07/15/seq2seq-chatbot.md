@@ -28,7 +28,7 @@ https://arxiv.org/abs/1409.3215
 A Neural Conversational Model  
 http://arxiv.org/abs/1506.05869
 
-これまで、
+これまでのチャットボットは、
 
 映画のセリフを学習させ、
 
@@ -65,6 +65,9 @@ th train.lua --cuda --dataset 50000 --hiddenSize 1000
 
 学習には AWS の g2.2xlarge インスタンスを用い、学習時間は 4 日弱でした。
 エラー率の推移は下記となります。
+
+{{< figure src="/images/2016/07/15/seq2seq-chatbot/error.png" >}}
+
 
 ## 評価
 最後に会話をしてみます。
