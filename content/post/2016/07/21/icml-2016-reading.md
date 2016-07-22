@@ -4,7 +4,7 @@ date = "2016-07-22T10:14:41+09:00"
 draft = false
 post = true
 tags = []
-title = "ICML2016読み会 資料まとめ"
+title = "ICML2016読み会 まとめ"
 +++
 
 [ICML2016読み会](http://connpass.com/event/34960/) の資料をまとめました。
