@@ -18,21 +18,6 @@ title = "Seq2Seq モデルを用いたチャットボット作成 〜 英会話�
 平たく言うと、「文字列」から「文字列」を予測するモデルのことです。  
 上記の図では、「ABC」を入力として、「WXYZ」を出力しています。  
 
-
-Sequence to Sequence Learning with Neural Networks  
-https://arxiv.org/abs/1409.3215
-
-## Seq2Seq モデルの対話タスクへの応用
-2015 年に Google が発表した下記の論文が有名です。  
-
-A Neural Conversational Model  
-http://arxiv.org/abs/1506.05869
-
-これまでのチャットボットは、
-
-映画のセリフを学習させ、
-
-
 ## 実装例
 以下に大変良くまとめられています。  
 https://github.com/nicolas-ivanov/seq2seq_chatbot_links  
@@ -58,13 +43,13 @@ cd ~/torch; bash install-deps;
 ./install.sh
 ```
 
-### 学習
+## 学習
 ```
 th train.lua --cuda --dataset 50000 --hiddenSize 1000
 ```
 
-学習には AWS の g2.2xlarge インスタンスを用い、学習時間は 4 日弱でした。
-エラー率の推移は下記となります。
+学習には AWS の g2.2xlarge インスタンスを用い、学習時間は 4 日弱でした。  
+エラー率の推移は下記となりました。
 
 {{< figure src="/images/2016/07/15/seq2seq-chatbot/error.png" >}}
 
