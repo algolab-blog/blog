@@ -30,3 +30,10 @@ main#index .summary .permalink {
 article img {
   margin: 0;
 }
+
+@media screen and (max-width: 480px) {
+article iframe.slideshare {
+  width: 320px;
+  height: 275px;
+}
+}

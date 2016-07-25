@@ -7,7 +7,8 @@ tags = []
 title = "ICML2016読み会 まとめ"
 +++
 
-[ICML2016読み会](http://connpass.com/event/34960/) の資料をまとめました。
+[ICML2016読み会](http://connpass.com/event/34960/) の資料をまとめました。  
+ニコ生配信URL：http://live.nicovideo.jp/watch/lv268597918
 
 ## ICML概要
 林浩平さん ({{<twitter hayasick >}}) / 産業技術総合研究所
@@ -60,6 +61,8 @@ title = "ICML2016読み会 まとめ"
 
 ## Meta-Learning with Memory-Augmented Neural Networks
 渡辺有祐さん / SONY
+
+{{<slideshare tj8ML4cdtq2M7s>}}
 
 論文: http://jmlr.org/proceedings/papers/v48/santoro16.html
 
