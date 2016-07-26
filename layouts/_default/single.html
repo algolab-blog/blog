@@ -17,11 +17,11 @@
 
   {{ if eq .Type "post" }}
   <nav class="pagination-single">
-    {{ if .NextInSection }}
-      <span class="previous">&larr; <a href="{{ .NextInSection.Permalink }}" rel="prev">{{ .NextInSection.Title }}</a></span>
-    {{ end }}
     {{ if .PrevInSection }}
-      <span class="next"><a href="{{ .PrevInSection.Permalink }}" rel="next">{{ .PrevInSection.Title }}</a> &rarr;</span>
+      <span class="previous">&larr; <a href="{{ .PrevInSection.Permalink }}" rel="prev">{{ .PrevInSection.Title }}</a></span>
+    {{ end }}
+    {{ if .NextInSection }}
+      <span class="next"><a href="{{ .NextInSection.Permalink }}" rel="next">{{ .NextInSection.Title }}</a> &rarr;</span>
     {{ end }}
   </nav>
   {{ end }}
