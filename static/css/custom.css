@@ -1,3 +1,4 @@
+/* basic styles */
 body {
   color: #111;
 }
@@ -27,13 +28,19 @@ main#index .summary .permalink {
   border-color: #999;
 }
 
+/* img */
 article img {
   margin: 0;
 }
 
-@media screen and (max-width: 480px) {
-article iframe.slideshare {
-  width: 320px;
-  height: 275px;
+figcaption p {
+  margin: 5px;
 }
+
+/* slideshare */
+@media screen and (max-width: 480px) {
+  article iframe.slideshare {
+    width: 320px;
+    height: 275px;
+  }
 }

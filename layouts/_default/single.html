@@ -15,13 +15,13 @@
     {{ partial "disqus.html" . }}
   </main>
 
-  {{ if .Params.pagenate }}
+  {{ if eq .Type "post" }}
   <nav class="pagination-single">
-    {{ if .Next }}
-      <span class="previous">&larr; <a href="{{ .Next.Permalink }}" rel="prev">{{ .Next.Title }}</a></span>
+    {{ if .PrevInSection }}
+      <span class="previous">&larr; <a href="{{ .NextInSection.Permalink }}" rel="prev">{{ .Next.Title }}</a></span>
     {{ end }}
-    {{ if .Prev }}
-      <span class="next"><a href="{{ .Prev.Permalink }}" rel="next">{{ .Prev.Title }}</a> &rarr;</span>
+    {{ if .NextInSection }}
+      <span class="next"><a href="{{ .PrevInSection.Permalink }}" rel="next">{{ .Prev.Title }}</a> &rarr;</span>
     {{ end }}
   </nav>
   {{ end }}

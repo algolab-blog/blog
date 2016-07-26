@@ -2,7 +2,6 @@
 author = "Shinpei Kawahito"
 date = "2016-07-22T10:14:41+09:00"
 draft = false
-post = true
 tags = []
 title = "ICML2016読み会 まとめ"
 +++

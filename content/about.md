@@ -1,11 +1,10 @@
 +++
 author = ""
-date = "2016-07-04T15:50:49+09:00"
-draft = false 
+date = "2016-01-01T00:00:00+09:00"
+draft = false
 tags = []
 title = "このブログについて"
-post = false
-
+pagenate = false
 +++
 
 ## 運営者情報

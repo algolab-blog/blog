@@ -2,7 +2,6 @@
 author = "Shinpei Kawahito"
 date = "2016-07-14T17:40:56+09:00"
 draft = false
-post = true
 tags = ["R-env", "RoBoHon", "Sota"]
 title = "R-env:連舞® ハンズオンで RoBoHoN（ロボホン）・ Sota（ソータ）と戯れてきた"
 +++

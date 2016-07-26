@@ -2,10 +2,8 @@
 author = "Shinpei Kawahito"
 date = "2016-07-21T10:56:26+09:00"
 draft = true
-post = true
 tags = []
 title = "RNN camp #1 に参加してきました"
-
 +++
 
 7月20日に行われた [RNN camp #1](http://connpass.com/event/35055/) に参加してきました。
