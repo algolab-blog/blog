@@ -20,7 +20,7 @@
     {{ if .NextInSection }}
       <span class="previous">&larr; <a href="{{ .Next.Permalink }}" rel="prev">{{ .Next.Title }}</a></span>
     {{ end }}
-    {{ if .PrevInSection }}
+    {{ if .Prev }}
       <span class="next"><a href="{{ .Prev.Permalink }}" rel="next">{{ .Prev.Title }}</a> &rarr;</span>
     {{ end }}
   </nav>
