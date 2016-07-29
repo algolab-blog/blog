@@ -1,0 +1,6 @@
+<figure>
+  <img src="/images/{{ .Page.RelPermalink }}/{{ index .Params 0 }}"/>
+  {{ if index .Params 1 }}
+  <figcaption><p>{{ index .Params 1 }}</p></figcaption>
+  {{ end }}
+</figure>

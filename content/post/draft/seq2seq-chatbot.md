@@ -12,7 +12,7 @@ title = "Seq2Seq モデルを用いたチャットボット作成 〜英会話�
 ゴールとして、Seq2Seq モデルを用いて、英会話を学習させ、動作させることを目指します。
 
 ## Seq2Seq (Sequence to Sequence) モデルとは
-{{< figure src="/images/2016/07/15/seq2seq-chatbot/seq2seq.png" >}}
+{{<img_rel "seq2seq.png">}}
 
 平たく言うと、「文字列」から「文字列」を予測するモデルのことです。  
 上記の図では、「ABC」を入力として、「WXYZ」を出力しています。  
@@ -50,8 +50,7 @@ th train.lua --cuda --dataset 50000 --hiddenSize 1000
 学習には AWS の g2.2xlarge インスタンスを用い、学習時間は 4 日弱でした。  
 エラー率の推移は下記となりました。
 
-{{< figure src="/images/2016/07/15/seq2seq-chatbot/error.png" >}}
-
+{{<img_rel "error.png">}}
 
 ## 評価
 最後に会話をしてみます。

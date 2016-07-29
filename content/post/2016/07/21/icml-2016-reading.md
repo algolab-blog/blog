@@ -6,7 +6,7 @@ tags = []
 title = "ICML2016読み会 まとめ"
 +++
 
-[ICML2016読み会](http://connpass.com/event/34960/) の資料をまとめました。  
+[ICML2016読み会](http://connpass.com/event/34960/) の内容をまとめました。  
 ニコ生配信URL：http://live.nicovideo.jp/watch/lv268597918
 
 ## ICML概要
@@ -15,7 +15,7 @@ title = "ICML2016読み会 まとめ"
 {{<slideshare 2OrjGekQEu2Bgr>}}
 <br />
 
-* ICML は NIPS に次ぐ機械学習の国際会議
+* ICMLはNIPSに次ぐ機械学習の国際会議
 * ディープラーニングと、それに伴う最適化がトレンド
 
 ## Dropout distillation
@@ -27,7 +27,7 @@ title = "ICML2016読み会 まとめ"
 
 > Dropout is a popular stochastic regularization technique for deep neural networks that works by randomly dropping (i.e. zeroing) units from the network during training. This randomization process allows to implicitly train an ensemble of exponentially many networks sharing the same parametrization, which should be averaged at test time to deliver the final prediction. A typical workaround for this intractable averaging operation consists in scaling the layers undergoing dropout randomization. This simple rule called ’standard dropout’ is efficient, but might degrade the accuracy of the prediction. In this work we introduce a novel approach, coined ’dropout distillation’, that allows us to train a predictor in a way to better approximate the intractable, but preferable, averaging process, while keeping under control its computational efficiency. We are thus able to construct models that are as efficient as standard dropout, or even more efficient, while being more accurate. Experiments on standard benchmark datasets demonstrate the validity of our method, yielding consistent improvements over conventional dropout.
 
-* Dropout を学習に用いた場合、その予測において、時間と精度を両立することが難しかった
+* Dropoutを学習に用いた場合、その予測において、時間と精度を両立することが難しかった
 * Distillation (蒸留法) を応用することで、短時間で精度よく予測を行うモデルを構築した
 
 {{<tweet 756002188770410496>}}
@@ -42,7 +42,7 @@ title = "ICML2016読み会 まとめ"
 
 > Numerous important problems can be framed as learning from graph data. We propose a framework for learning convolutional neural networks for arbitrary graphs. These graphs may be undirected, directed, and with both discrete and continuous node and edge attributes. Analogous to image-based convolutional networks that operate on locally connected regions of the input, we present a general approach to extracting locally connected regions from graphs. Using established benchmark data sets, we demonstrate that the learned feature representations are competitive with state of the art graph kernels and that their computation is highly efficient.
 
-* グラフ構造 (化学化合物など) を CNN で学習させたいが、そのまま突っ込むことは難しい
+* グラフ構造 (化学化合物など) をCNNで学習させたいが、そのまま突っ込むことは難しい
 * WL カーネルを応用したアルゴリズムを用いて、グラフ構造をテンソルに変換した
 {{<tweet 756011698117419008>}}
 
@@ -55,8 +55,8 @@ title = "ICML2016読み会 まとめ"
 
 > Numerous important problems can be framed as learning from graph data. We propose a framework for learning convolutional neural networks for arbitrary graphs. These graphs may be undirected, directed, and with both discrete and continuous node and edge attributes. Analogous to image-based convolutional networks that operate on locally connected regions of the input, we present a general approach to extracting locally connected regions from graphs. Using established benchmark data sets, we demonstrate that the learned feature representations are competitive with state of the art graph kernels and that their computation is highly efficient.
 
-* 一般のノルムでの正規化を用いた VAR モデルの推定の非漸近的な解析を行った
-* 収束ルートは i.i.d と同じだった
+* 一般のノルムでの正規化を用いた VARモデルの推定の非漸近的な解析を行った
+* 収束ルートはi.i.dと同じだった
 
 ## Meta-Learning with Memory-Augmented Neural Networks
 渡辺有祐さん / SONY
@@ -81,7 +81,7 @@ title = "ICML2016読み会 まとめ"
 
 > Modeling the distribution of natural images is a landmark problem in unsupervised learning. This task requires an image model that is at once expressive, tractable and scalable. We present a deep neural network that sequentially predicts the pixels in an image along the two spatial dimensions. Our method models the discrete probability of the raw pixel values and encodes the complete set of dependencies in the image. Architectural novelties include fast two-dimensional recurrent layers and an effective use of residual connections in deep recurrent networks. We achieve log-likelihood scores on natural images that are considerably better than the previous state of the art. Our main results also provide benchmarks on the diverse ImageNet dataset. Samples generated from the model appear crisp, varied and globally coherent.
 
-* 画像生成において、VAE や GAN とは異なる自己回帰 (RNN に似たもの) のアプローチを用いたところ、綺麗な画像を生成できた
+* 画像生成において、VAEやGANとは異なる自己回帰 (RNNに似たもの) のアプローチを用いたところ、綺麗な画像を生成できた
 * 並列化により、高速な勾配計算も両立した
 
 {{<tweet 756037448879136768>}}
@@ -97,8 +97,8 @@ title = "ICML2016読み会 まとめ"
 
 > Neural network architectures with memory and attention mechanisms exhibit certain reason- ing capabilities required for question answering. One such architecture, the dynamic memory net- work (DMN), obtained high accuracy on a variety of language tasks. However, it was not shown whether the architecture achieves strong results for question answering when supporting facts are not marked during training or whether it could be applied to other modalities such as images. Based on an analysis of the DMN, we propose several improvements to its memory and input modules. Together with these changes we introduce a novel input module for images in order to be able to answer visual questions. Our new DMN+ model improves the state of the art on both the Visual Question Answering dataset and the bAbI-10k text question-answering dataset without supporting fact supervision.
 
-* Memory Network 内の Memory Module を改良した
-* テキストではなく、画像を用いた QA タスクでも精度が出た
+* Memory Network内のMemory Moduleを改良した
+* テキストではなく、画像を用いたQAタスクでも精度が出た
 
 {{<tweet 756047518291460096>}}
 {{<tweet 756050102670598144>}}
@@ -114,7 +114,7 @@ title = "ICML2016読み会 まとめ"
 
 > Automatic synthesis of realistic images from text would be interesting and useful, but current AI systems are still far from this goal. However, in recent years generic and powerful recurrent neural network architectures have been developed to learn discriminative text feature representations. Meanwhile, deep convolutional generative adversarial networks (GANs) have begun to generate highly compelling images of specific categories such as faces, album covers, room interiors and flowers. In this work, we develop a novel deep architecture and GAN formulation to effectively bridge these advances in text and image modeling, translating visual concepts from characters to pixels. We demonstrate the capability of our model to generate plausible images of birds and flowers from detailed text descriptions.
 
-* GAN のアーキテクチャを応用し、 文章から画像を生成することができた
+* GANのアーキテクチャを応用し、 文章から画像を生成することができた
 * 文章だけでは表せない情報は、スタイル、という概念を用いて吸収した
 
 {{<tweet 756057271877050369>}}
@@ -130,7 +130,7 @@ title = "ICML2016読み会 まとめ"
 
 > We show that an end-to-end deep learning approach can be used to recognize either English or Mandarin Chinese speech–two vastly different languages. Because it replaces entire pipelines of hand-engineered components with neural networks, end-to-end learning allows us to handle a diverse variety of speech including noisy environments, accents and different languages. Key to our approach is our application of HPC techniques, enabling experiments that previously took weeks to now run in days. This allows us to iterate more quickly to identify superior architectures and algorithms. As a result, in several cases, our system is competitive with the transcription of human workers when benchmarked on standard datasets. Finally, using a technique called Batch Dispatch with GPUs in the data center, we show that our system can be inexpensively deployed in an online setting, delivering low latency when serving users at scale.
 
-* End to End の 音声認識モデルを構築し、人手による書き起こしよりも高い精度を得た
+* End to Endの音声認識モデルを構築し、人手による書き起こしよりも高い精度を得た
 * 異なる言語や、雑音のあるなしにも対応可能なモデルとなった
 
 {{<tweet 756065132116008961>}}

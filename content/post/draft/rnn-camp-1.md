@@ -13,7 +13,7 @@ title = "RNN camp #1 に参加してきました"
 {{< speakerdeck fd37c5a57f724526893f68bb0be671a2 >}}
 
 ## 概要
-RNN (Recurrent Neural Network, 再帰型ニューラルネットワーク) の概要説明のあと、シンプルな RNN である
+RNN (Recurrent Neural Network, 再帰型ニューラルネットワーク) の概要説明のあと、シンプルなRNNである
 SRN (Simple Recurrent Network, 単純再帰型ネットワーク) および、学習法である BPTT (Back Propagation Through Time) について、実習を中心とした解説がありました。
 
 ## エルマンネット
