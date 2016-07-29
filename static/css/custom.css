@@ -34,13 +34,15 @@ article img {
 }
 
 figcaption p {
+  font-size: 12px;
   margin: 5px;
+  color: #999;
 }
 
 /* slideshare */
 @media screen and (max-width: 480px) {
   article iframe.slideshare {
-    width: 320px;
-    height: 275px;
+    width: 429px;
+    height: 357px;
   }
 }
