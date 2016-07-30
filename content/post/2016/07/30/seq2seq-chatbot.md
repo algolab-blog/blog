@@ -81,8 +81,8 @@ th train.lua --cuda --dataset 50000 --hiddenSize 1000
 
 {{<img_rel "error.png">}}
 
-## テスト 
-最後に会話をしてみましょう。
+## テスト
+学習したモデルを用いて会話をしてみましょう。
 
 ```
 th eval.lua
@@ -108,4 +108,11 @@ __neuralconvo>__ I've been watching over the phone thing...
 
 うーん。深い...。
 
+## 評価
+上記のように会話として成立するものもあれば、全く成り立たないケースもありました。
 
+>
+__you>__ What color is the sky?  
+__neuralconvo>__ The other plate is currently in new york, in some kind of a tree in a decent, don
+
+会話の精度は、データセットによりそうで、また、文脈の理解には乏しい、という印象でした。
