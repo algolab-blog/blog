@@ -6,39 +6,45 @@ tags = ["seq2seq", "bot"]
 title = "Seq2Seqモデルを用いたチャットボット作成 〜英会話のサンプルを動かす〜"
 +++
 
-最近、チャットボットが盛り上がっていますが、自然な会話を成り立たせること、は大きな課題の一つです。  
-本記事では、Deep Learningの一種である、Seq2Seq モデルを用いたアプローチをご紹介します。  
-ゴールとして、Seq2Seqモデルを用いて、英会話を学習させ、動作させることを目指します。
+最近、チャットボットが話題となっていますが、自然な会話を成り立たせること、は大きな課題の一つです。  
+ここでは、Deep Learningの一種である、Seq2Seqモデルを用いて、チャットボットを動作させてみます。  
+ゴールとして、英語を学習させ、実際に会話を行ってみることを目指します。
 
 ## Seq2Seq (Sequence to Sequence) モデルとは
 {{<img_rel "seq2seq.png">}}
 
-平たく言うと、「文字列」から「文字列」を予測するモデルのことです。  
-上記の図では、「ABC」を入力として、「WXYZ」を出力しています。  
+平たく言うと、ある文字列から、次の文字列を予測するモデルのことです。  
+上記の図では、「ABC」を入力として、「WXYZ」を出力 (予測) しています。  
 
-2015年、Googleは、Seq2Seqモデルを対話タスクへ応用した論文を発表しました。
+Seq2Seqモデルの対話タスクへの応用を試みたのがGoogleで、2015年に下記の論文を発表しています。
 
 A Neural Conversational Model  
 http://arxiv.org/abs/1506.05869
 
-論文内において、これまでの対話モデルは、状況を絞り (飛行機を予約する状況など) 、手でルールを記載する必要があったが、Seq2Seqモデルを用いて対話データを学習させることで、自然な応答ができるようになった、と述べています。
+これまでの対話モデルは、ドメインを絞り (飛行機を予約するなど) 、手でルールを記載する必要があったが、Seq2Seqモデルを用いて対話データを学習させることで、自然な応答ができるようになった、と論文内で述べています。
 
 ## 実装例
-Seq2Seqモデルを用いたチャットボットの実装は、色々な人が試みていますが、以下に良くまとめられています。  
+Seq2Seqモデルを用いたチャットボットの実装は、色々な人が公開しています。  
 https://github.com/nicolas-ivanov/seq2seq_chatbot_links  
 
 今回は、実装例の中で、最も良い結果が出たとされている、以下のリポジトリのコードを動作させてみます。
 https://github.com/macournoyer/neuralconvo
 
 ## 環境構築
+基本的には下記の手順で進めます。  
+https://github.com/macournoyer/neuralconvo#installing
+
 ### ソースコードのダウンロード
 ```
 git clone https://github.com/macournoyer/neuralconvo.git
 ```
 
 ### Torchのインストール
-Torchで実装されているので、公式に従って、インストールします。  
+公式に従って、インストールします。  
 http://torch.ch/docs/getting-started.html  
+
+環境によって叩くコマンドが違うため、詳細は上記リンクをご参照ください。  
+下記は、Ubuntu + zshでの例です。
 
 ```
 git clone https://github.com/torch/distro.git ~/torch --recursive
@@ -48,19 +54,21 @@ source ~/.zshrc
 ```
 
 ### Luaライブラリのインストール
-必要なLuaライブラリのインストール
-
 ```
 luarocks install nn
 luarocks install rnn
 luarocks install penlight
-luarocks install nn
-luarocks install rnn
-luarocks install penlight
+```
+
+GPUを用いて学習を行うので、下記もインストールします。
+
+```
+luarocks install cutorch
+luarocks install cunn
 ```
 
 ### データセットの準備
-データセットは、下記で公開されている映画台詞のコーパスを用います。
+データセットは、下記で公開されている映画の台詞コーパスを用います。  
 http://www.mpi-sws.org/~cristian/Cornell_Movie-Dialogs_Corpus.html
 
 ```
@@ -82,7 +90,7 @@ th train.lua --cuda --dataset 50000 --hiddenSize 1000
 {{<img_rel "error.png">}}
 
 ## テスト
-学習したモデルを用いて会話をしてみましょう。
+学習したモデルを用いて実際に会話をしてみました。
 
 ```
 th eval.lua
@@ -100,13 +108,13 @@ __neuralconvo>__ No, i don't.
 __you>__ Are you intelligent?  
 __neuralconvo>__ No.
 
-それっぽい会話は成り立つようです。最後に、哲学的な質問をしてみました。
+それっぽい会話は成り立つようです。哲学的な質問をしてみます。
 
 >
 __you>__ What is the purpose of living?  
 __neuralconvo>__ I've been watching over the phone thing...
 
-うーん。深い...。
+うーん。深い...!?
 
 ## 評価
 上記のように会話として成立するものもあれば、全く成り立たないケースもありました。
@@ -115,4 +123,4 @@ __neuralconvo>__ I've been watching over the phone thing...
 __you>__ What color is the sky?  
 __neuralconvo>__ The other plate is currently in new york, in some kind of a tree in a decent, don
 
-会話の精度は、データセットによりそうで、また、文脈の理解には乏しい、という印象でした。
+知識が足りないのはデータセットの不足で、文章として成立していないのは学習不足、といったところでしょうか。  

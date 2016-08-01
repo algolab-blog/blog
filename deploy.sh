@@ -32,3 +32,5 @@ cd ..
 git add -A .
 git commit -m "$msg"
 git push origin master
+
+exit 0

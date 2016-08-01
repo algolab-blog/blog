@@ -39,6 +39,11 @@ figcaption p {
   color: #999;
 }
 
+/* list */
+article ul {
+  margin-bottom: 15px;
+}
+
 /* slideshare */
 @media screen and (max-width: 480px) {
   article iframe.slideshare {
