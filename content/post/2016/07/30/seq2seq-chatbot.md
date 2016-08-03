@@ -27,44 +27,20 @@ http://arxiv.org/abs/1506.05869
 Seq2Seqモデルを用いたチャットボットの実装は、色々な人が公開しています。  
 https://github.com/nicolas-ivanov/seq2seq_chatbot_links  
 
-今回は、実装例の中で、最も良い結果が出たとされている、以下のリポジトリのコードを動作させてみます。
+今回は、実装例の中で、最も良い結果が出たとされている、以下のリポジトリのコードを動作させてみます。  
 https://github.com/macournoyer/neuralconvo
 
 ## 環境構築
 基本的には下記の手順で進めます。  
-https://github.com/macournoyer/neuralconvo#installing
+https://github.com/macournoyer/neuralconvo#installing  
 
-### ソースコードのダウンロード
-```
-git clone https://github.com/macournoyer/neuralconvo.git
-```
+筆者は下記の環境をベースに、追加で必要なLuaモジュールをインストールしました。  
+[TorchをAWSのGPUインスタンス (Ubuntu 14.04) で動かす]({{ref "post/2016/08/03/torch-aws-gpu-ubuntu.md"}})
 
-### Torchのインストール
-公式に従って、インストールします。  
-http://torch.ch/docs/getting-started.html  
-
-環境によって叩くコマンドが違うため、詳細は上記リンクをご参照ください。  
-下記は、Ubuntu + zshでの例です。
-
-```
-git clone https://github.com/torch/distro.git ~/torch --recursive
-cd ~/torch; bash install-deps;
-./install.sh
-source ~/.zshrc
-```
-
-### Luaライブラリのインストール
 ```
 luarocks install nn
 luarocks install rnn
 luarocks install penlight
-```
-
-GPUを用いて学習を行うので、下記もインストールします。
-
-```
-luarocks install cutorch
-luarocks install cunn
 ```
 
 ### データセットの準備
@@ -72,6 +48,7 @@ luarocks install cunn
 http://www.mpi-sws.org/~cristian/Cornell_Movie-Dialogs_Corpus.html
 
 ```
+git clone https://github.com/macournoyer/neuralconvo.git
 cd neuralconvo/data
 wget http://www.mpi-sws.org/~cristian/data/cornell_movie_dialogs_corpus.zip
 unzip cornell_movie_dialogs_corpus.zip
@@ -84,8 +61,7 @@ mv cornell\ movie-dialogs\ corpus cornell_movie_dialogs
 th train.lua --cuda --dataset 50000 --hiddenSize 1000
 ```
 
-学習には AWSのg2.2xlargeインスタンスを用い、学習時間は4日弱でした。  
-なお、エラー率の推移は下記となりました。
+学習時間は4日弱で、エラー率の推移は下記となりました。
 
 {{<img_rel "error.png">}}
 
