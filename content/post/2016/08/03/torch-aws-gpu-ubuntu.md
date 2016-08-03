@@ -9,9 +9,10 @@ title = "TorchをAWSのGPUインスタンス (Ubuntu 14.04) で動かす"
 TorchをAWSのGPUインスタンス (Ubuntu 14.04) で動かす手順をまとめます。  
 環境は以下の通りです。
 
-* OS: Ubuntu Server 14.04 LTS
-* CUDA: 7.5
-* CuDNN: R5
+* Ubuntu Server 14.04 LTS
+* CUDA7.5
+* CuDNN v5
+* Torch7
 
 ## インスタンスを起動
 {{<img_rel "ubuntu.png">}}
@@ -108,11 +109,12 @@ yes
 source ~/.bashrc
 ```
 
-最後に、CUDAを使うためのLuaライブラリをインストールします。
+最後に、CUDAおよびcuDNNを使うためのLuaライブラリをインストールします。
 ```
 luarocks install cutorch
 luarocks install cunn
 luarocks install cunnx
+luarocks install https://raw.githubusercontent.com/soumith/cudnn.torch/master/cudnn-scm-1.rockspec
 ```
 
 以上で環境構築は完了です。
