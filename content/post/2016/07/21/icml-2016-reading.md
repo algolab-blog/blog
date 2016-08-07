@@ -73,7 +73,7 @@ title = "ICML2016読み会まとめ"
 {{<tweet 756031082303152130>}}
 
 ## Pixel Recurrent Neural Networks
-得居誠也さん ({{<twitter beam2d >}}) / Preferred Networks
+得居誠也さん ({{<twitter beam2d>}}) / Preferred Networks
 
 {{<slideshare  3bJ5TFJmX7Bk1K>}}
 
@@ -89,7 +89,7 @@ title = "ICML2016読み会まとめ"
 {{<tweet 756042609060040705>}}
 
 ## Dynamic Memory Networks for Visual and Textual Question Answering
-花木健太郎さん {{{<twitter csstudyabroad>}} / IBM
+花木健太郎さん {{<twitter csstudyabroad>}} / IBM
 
 {{<slideshare efLeWADDGXz14D>}}
 

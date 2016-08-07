@@ -34,8 +34,8 @@ https://github.com/macournoyer/neuralconvo
 基本的には下記の手順で進めます。  
 https://github.com/macournoyer/neuralconvo#installing  
 
-筆者は下記の環境をベースに、追加で必要なLuaモジュールをインストールしました。  
-[TorchをAWSのGPUインスタンス (Ubuntu 14.04) で動かす]({{ref "post/2016/08/03/torch-aws-gpu-ubuntu.md"}})
+筆者は下記の環境をベースに、追加で必要なLuaモジュールをインストール (更新) しました。  
+[TorchをAWSのGPUインスタンス (Ubuntu 14.04) で動かす]({{<ref "post/2016/08/03/torch-aws-gpu-ubuntu.md">}})
 
 ```
 luarocks install nn
