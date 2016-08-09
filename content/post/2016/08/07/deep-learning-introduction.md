@@ -2,7 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-08-07T15:46:48+09:00"
 draft = false
-tags = ["AIトレーニング"]
+tags = ["AI-training"]
 title = "ディープラーニング徹底入門 〜AIトレーニング第1回〜"
 +++
 

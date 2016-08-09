@@ -2,7 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-08-01T22:06:25+09:00"
 draft = false
-tags = []
+tags = ["DQN", "TensorFlow"]
 title = "超シンプルにDQN (Deep Q Network) を実装してみる 〜導入編〜"
 +++
 
