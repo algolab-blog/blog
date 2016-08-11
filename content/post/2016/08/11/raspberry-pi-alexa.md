@@ -1,0 +1,146 @@
++++
+author = "Shinpei Kawahito"
+date = "2016-08-11T19:08:44+09:00"
+draft = false
+tags = []
+title = "6000円でRaspberry Pi 3からAlexa Voice Servicesを使う"
++++
+
+今回、Raspberry Pi 3からAlexa Voice Services (AVS) を利用できるようにしました。  
+セットアップについては下記にある通りですが、低予算での最低限の手順をまとめてみます。
+https://github.com/amzn/alexa-avs-raspberry-pi
+
+## 完成したもの
+いきなり動画ですが、こんな感じで動きます。英語で話かけると、リクエストを解釈して実行してくれたり、音声(英語)で応答してくれて面白いです。
+{{<youtube fWubPL5_YaU>}}
+
+## 買ったもの・使ったもの
+音声入力にUSBマイクロフォンが必要なので、Raspberry Pi 3と併せて購入。他はありあわせで用意しました。  
+Raspberry Pi用のディスプレイを用意してもよいですが、今回はVNC server(Linux版リモートデスクトップ)を使います。
+
+### 買ったもの
+- Raspberry Pi 3 (4800円)
+ - https://www.amazon.co.jp/gp/product/B01D1FR2WE/
+- USBマイクロフォン (1600円)
+ - https://www.amazon.co.jp/gp/product/B0027WPY82
+
+### ありあわせ
+- スピーカー (普通のイヤホンでもOK)
+- USBケーブル (電源用)
+- LANケーブル
+
+## まずRaspberry Piの起動
+### 手順
+1. MicroSD, LAN, USBマイクロフォン, スピーカーを接続しく
+1. 電源用としてUSBケーブルを挿す。するとBIOSが起動する。今回はOSであるRaspbian Jessieも自動で起動しました。
+
+###  OS確認
+立ち上がったらOSを確認しておきます。
+
+```
+$ uname -a
+Linux raspberrypi 4.4.13-v7+ #894 SMP Mon Jun 13 13:13:27 BST 2016 armv7l GNU/Linux
+```
+
+## Raspberry Pi に諸々インストール
+AVSを利用するために必要なものを諸々インストールします。
+
+### SSHとOpenSSL
+今回、デフォルトで設定されてたので、設定不要でした。
+
+### VNC Serverのインストール
+
+```sh
+# install
+sudo apt-get install tightvncserver
+# run
+tightvncserver
+# auto run setup
+vi /home/pi/.config/tightvnc.desktop
+```
+
+```sh:tightvnc.desktop
+[Desktop Entry]
+Type=Application
+Name=TightVNC
+Exec=vncserver :1
+StartupNotify=false
+```
+
+### VLCのインストール
+VLC media playerをインストールします。
+
+```sh
+# install
+sudo apt-get install vlc-nox vlc-data
+# add env vars
+echo "export LD_LIBRARY_PATH=/usr/lib/vlc" >> ~/.bashrc
+echo "export VLC_PLUGIN_PATH=/usr/lib/vlc/plugins" >> ~/.bashrc
+soure ~/.bashrc
+```
+
+### NodeとNPMのインストール
+後に出てくるサーバーの起動に必要なNodeとNPMをインストールします。
+
+```sh
+# apt-get update & upgrade. It takes about 15 min.
+sudo apt-get update && sudo apt-get upgrade
+# install nodejs
+curl -sL https://deb.nodesource.com/setup | sudo bash -
+sudo apt-get install nodejs
+cd /home/pi/Desktop/alexa-avs-raspberry-pi-master/samples/companionService
+npm install
+```
+
+### JDKとMavenのインストール
+公式DocはMavenの環境変数は `/etc/profile.d/maven.sh` に追加する方法ですが、うまくいかなかったので手っ取り早く `bashrc` に追加して進めました。
+
+```sh
+# java
+cd /home/pi/Desktop/alexa-avs-raspberry-pi-master/samples/javaclient
+./install-java8.sh
+# maven
+wget http://apache.osuosl.org/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+sudo tar xvf apache-maven-3.3.9-bin.tar.gz  -C /opt
+# add maven_vars
+echo "export M2_HOME=/opt/apache-maven-3.3.9" >> ~/.bashrc
+echo "export PATH=$PATH:$M2_HOME/bin" >> ~/.bashrc
+source ~/.bashrc
+```
+
+### 証明書生成スクリプトを実行
+プロダクトID, シリアル番号, パスワードの3つを入力します。今回はパスワードは空のままで進めます。
+
+```sh
+/home/pi/Desktop/alexa-avs-raspberry-pi-master/samples/javaclient/generate.sh
+> product ID: my_device
+> Serial Number: 123456
+> Password: [blank]
+```
+
+### クライアントIDとClientSecretを発行
+ここは [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#6---getting-started-with-alexa-voice-service) の画像のとおり進めればよいです。
+
+### サーバとクライアントを起動
+下記のとおりサーバを起動します。 `config.js` には先ほど発行したクライアントIDとClientSecretを入力しておきます。
+
+```sh
+# setup clientId and ClientSecret
+vi /home/pi/Desktop/alexa-avs-raspberry-pi-master/samples/companionService/config.js
+cd /home/pi/Desktop/alexa-avs-raspberry-pi-master/samples/companionService
+npm start
+```
+
+続いてクライアントも起動します。起動するとGUIも一緒に立ち上がります。 `DISPLAY=:1.0` はVNC経由の場合の指定です。外部ディスプレイを使う場合は `DISPLAY=:0.0` です。
+
+```sh
+cd /home/pi/Desktop/alexa-avs-raspberry-pi-master/samples/javaclient
+mvn install
+export DISPLAY=:1.0
+mvn exec:exec
+```
+GUIに出てくるURLにアクセスしてデバイスの登録になります。ここも [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#10---obtain-authorization-from-login-with-amazon) の画像のとおりです。以上が終わると、AVSを利用できます。
+
+## 次回予告
+次回はAlexa skillを登録して使ってみようと思います。乞うご期待。Don't miss out!
+
