@@ -3,46 +3,52 @@ author = "Shinpei Kawahito"
 date = "2016-08-11T19:08:44+09:00"
 draft = false
 tags = []
-title = "6000円でRaspberry Pi 3からAlexa Voice Servicesを使う"
+title = "Amazon Echoを6,000円で動かしてみる"
 +++
 
-今回、Raspberry Pi 3からAlexa Voice Services (AVS) を利用できるようにしました。  
+[音声は新しいパラダイムシフトになる 〜2016年度版メアリー・ミーカー氏レポートまとめ〜]({{<ref "post/2016/07/29/mary-meeker-2016.md">}}) でも触れたように、次世代デバイスとしてAmazon Echoは注目するべき存在です。  
+
+しかしながら、日本では技適の関係で未だ使用できません。  
+ただ、Alexa Voice Services (AVS) というものが公開されており、Amazon Echoを様々なデバイスで動作させることが可能です。
+
+今回は、Raspberry Pi 3からAVSを利用できるようにしました。  
 セットアップについては下記にある通りですが、低予算での最低限の手順をまとめてみます。
 https://github.com/amzn/alexa-avs-raspberry-pi
 
 ## 完成したもの
-いきなり動画ですが、こんな感じで動きます。英語で話かけると、リクエストを解釈して実行してくれたり、音声(英語)で応答してくれて面白いです。
+いきなり動画ですが、こんな感じで動きます。英語で話かけると、リクエストを解釈して実行してくれたり、音声で応答してくれて面白いです。
 {{<youtube fWubPL5_YaU>}}
 
-## 買ったもの・使ったもの
-音声入力にUSBマイクロフォンが必要なので、Raspberry Pi 3と併せて購入。他はありあわせで用意しました。  
-Raspberry Pi用のディスプレイを用意してもよいですが、今回はVNC server(Linux版リモートデスクトップ)を使います。
+## 用意したもの
+音声入力にUSBマイクロフォンが必要なので、Raspberry Pi 3と併せて購入し、他はありあわせで用意しました。  
+Raspberry Pi用のディスプレイを用意してもよいですが、今回はVNC server (Linux版リモートデスクトップ) を使います。
 
 ### 買ったもの
-- Raspberry Pi 3 (4800円)
+- Raspberry Pi 3 (4,800円)
  - https://www.amazon.co.jp/gp/product/B01D1FR2WE/
-- USBマイクロフォン (1600円)
+- USBマイクロフォン (1,600円)
  - https://www.amazon.co.jp/gp/product/B0027WPY82
 
 ### ありあわせ
-- スピーカー (普通のイヤホンでもOK)
-- USBケーブル (電源用)
+- Micro SDカード
+ - https://www.amazon.co.jp/dp/B00CDJNOX6/
+- Micro-USB (A-MicroB) ケーブル
+- スピーカー
 - LANケーブル
 
-## まずRaspberry Piの起動
-### 手順
-1. MicroSD, LAN, USBマイクロフォン, スピーカーを接続しく
-1. 電源用としてUSBケーブルを挿す。するとBIOSが起動する。今回はOSであるRaspbian Jessieも自動で起動しました。
+## Raspberry Pi を起動する
+### OSイメージの準備
+以下の記事を参考に進めました。  
+[Raspberry Pi 3にRaspbianをインストール(Mac OS X を使用)](http://qiita.com/onlyindreams/items/acc70807b69b43e176bf)
 
-###  OS確認
-立ち上がったらOSを確認しておきます。
+* Rasbian Jessie は ```2016-05-27``` リリースのものを用いました
+* ddコマンドのオプションで、ブロックサイズを大文字 (```bs=1M```) で指定しないと動作しませんでした
 
-```
-$ uname -a
-Linux raspberrypi 4.4.13-v7+ #894 SMP Mon Jun 13 13:13:27 BST 2016 armv7l GNU/Linux
-```
+### 起動手順
+1. MicroSD、LAN、 USBマイクロフォン、スピーカーを接続しておきます。
+1. 電源用としてUSBケーブルを挿すとBIOSが起動します。今回はOSであるRaspbian Jessieも自動で起動しました。
 
-## Raspberry Pi に諸々インストール
+## 必要なライブラリをインストール
 AVSを利用するために必要なものを諸々インストールします。
 
 ### SSHとOpenSSL
@@ -58,8 +64,8 @@ tightvncserver
 # auto run setup
 vi /home/pi/.config/tightvnc.desktop
 ```
-
-```sh:tightvnc.desktop
+tightvnc.desktop
+```sh
 [Desktop Entry]
 Type=Application
 Name=TightVNC
@@ -109,7 +115,7 @@ source ~/.bashrc
 ```
 
 ### 証明書生成スクリプトを実行
-プロダクトID, シリアル番号, パスワードの3つを入力します。今回はパスワードは空のままで進めます。
+プロダクトID、シリアル番号、パスワードの3つを入力します。今回はパスワードは空のままで進めます。
 
 ```sh
 /home/pi/Desktop/alexa-avs-raspberry-pi-master/samples/javaclient/generate.sh
@@ -142,5 +148,5 @@ mvn exec:exec
 GUIに出てくるURLにアクセスしてデバイスの登録になります。ここも [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#10---obtain-authorization-from-login-with-amazon) の画像のとおりです。以上が終わると、AVSを利用できます。
 
 ## 次回予告
-次回はAlexa skillを登録して使ってみようと思います。乞うご期待。Don't miss out!
+次回はAlexa Skillsを登録して使ってみようと思います。乞うご期待。Don't miss out!
 
