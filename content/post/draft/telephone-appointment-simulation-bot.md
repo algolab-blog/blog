@@ -3,7 +3,20 @@ author = "Shinpei Kawahito"
 date = "2016-08-09T11:55:59+09:00"
 draft = true
 tags = []
-title = "telephone appointment simulation bot"
-
+title = "テレアポ模擬トレーニングBOT 〜教育コンテンツとしてのチャットボットの可能性〜"
 +++
 
+{{<img_rel "facebook_cover.png">}}
+
+LINEがBOT API、FacebookがMessenger Platformを発表してから数ヶ月たちました。  
+これまでに数々のチャットボットがリリースされていますが、まだ活用方法を模索している段階かと思います。
+
+その中で、教育コンテンツとしての可能性があるのではないかと考え、「テレアポ模擬トレーニングBOT」を [TORiX](http://www.torix-corp.com/) さんと共同開発させていただきました。
+
+今回は、このBOTを題材として、チャットボットの活用可能性を探ってみたいと思います。
+
+## テレアポ模擬トレーニングBOT
+{{<fb_messageus "131078513971096" "1771482106414711">}}
+
+---
+「チャットUIを用いたインタラクティブな」
