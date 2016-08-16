@@ -6,7 +6,7 @@ tags = []
 title = "iOSで音声認識 〜Speech Frameworkを試す〜"
 +++
 
-2016/08/12現在、まだβ版という位置づけですが、Apple謹製の音声認識エンジン (Speech Framework) が公開されています。今回は、下記のサンプルコードを動作させてみます。
+2016/08/16現在、まだβ版という位置づけですが、Apple謹製の音声認識エンジン (Speech Framework) が公開されています。今回は、下記のサンプルコードを動作させてみます。
 https://developer.apple.com/library/prerelease/content/samplecode/SpeakToMe/Introduction/Intro.html
 
 動作を確認するにはXcode 8.0以降、iOS 10.0 以降が必要なので、環境を整えるところから始めます。
