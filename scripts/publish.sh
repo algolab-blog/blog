@@ -19,10 +19,12 @@ if [ "$images" ] && [ -d "static/images/post/draft/$name" ]; then
   mv "static/images/post/draft/$name" "static/images/post/$date/"
 fi
 
-if [ -d "static/images/post/draft/$name" ] && [ -z "static/images/post/draft/$name" ]; then
-  :
-else
-  rm -r "static/images/post/draft/$name"
+if [ -d "static/images/post/draft/$name" ]; then
+  if [ -z "static/images/post/draft/$name" ]; then
+    :
+  else
+    rm -r "static/images/post/draft/$name"
+  fi
 fi
 
 hugo undraft "content/post/$date/$name.md"
