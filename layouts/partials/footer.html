@@ -17,8 +17,8 @@
   var birthday = new Date('2112-09-03');
   var diff = Math.ceil((birthday - today) / 86400000).toString();
   var diff = diff.split(/(?=(?:\d{3})+$)/).join();
-  $("#doraemon-birthday").text("ドラえもん誕生まであと"+diff+"日。");
-console.log(diff);
+  var target = $("#doraemon-birthday");
+  target.text("ドラえもん誕生まであと"+diff+"日。");
 </script>
 
 

@@ -15,7 +15,7 @@ header h2, {
   margin-top: 10px;
 }
 
-.ssummary h2 a:hover {
+.summary h2 a:hover {
   text-decoration: underline;
 }
 
@@ -49,5 +49,13 @@ article ul {
   article iframe.slideshare {
     width: 429px;
     height: 357px;
+  }
+}
+
+/* doraemon */
+@media (max-width: 768px) {
+  #doraemon-birthday:before {
+    content: "\A" ;
+    white-space: pre ;
   }
 }
