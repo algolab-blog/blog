@@ -2,8 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-08-11T19:08:44+09:00"
 draft = false
-tags = []
-title = "Amazon Echoを6,000円で動かしてみる"
+title = "Amazon Echoを6,000円で自作する 〜Raspberry Pi 3 + Alexa Voice Services (AVS)〜"
 +++
 
 [音声は新しいパラダイムシフトになる 〜2016年度版メアリー・ミーカー氏レポートまとめ〜]({{<ref "post/2016/07/29/mary-meeker-2016.md">}}) でも触れたように、次世代デバイスとしてAmazon Echoは注目するべき存在です。  
@@ -20,7 +19,7 @@ https://github.com/amzn/alexa-avs-raspberry-pi
 {{<youtube fWubPL5_YaU>}}
 
 ## 用意したもの
-音声入力にUSBマイクロフォンが必要なので、Raspberry Pi 3と併せて購入し、他はありあわせで用意しました。  
+音声入力にUSBマイクロフォンが必要なので、Raspberry Pi 3と併せて購入。他はありあわせで用意しました。  
 Raspberry Pi用のディスプレイを用意してもよいですが、今回はVNC server (Linux版リモートデスクトップ) を使います。
 
 ### 買ったもの
@@ -41,8 +40,8 @@ Raspberry Pi用のディスプレイを用意してもよいですが、今回�
 以下の記事を参考に進めました。  
 [Raspberry Pi 3にRaspbianをインストール(Mac OS X を使用)](http://qiita.com/onlyindreams/items/acc70807b69b43e176bf)
 
-* Rasbian Jessie は ```2016-05-27``` リリースのものを用いました
-* ddコマンドのオプションで、ブロックサイズを大文字 (```bs=1M```) で指定しないと動作しませんでした
+* Rasbian Jessie は ```2016-05-27``` リリースのものを用いました。
+* ddコマンドのオプションで、ブロックサイズを大文字 (```bs=1M```) で指定
 
 ### 起動手順
 1. MicroSD、LAN、 USBマイクロフォン、スピーカーを接続しておきます。
@@ -50,9 +49,6 @@ Raspberry Pi用のディスプレイを用意してもよいですが、今回�
 
 ## 必要なライブラリをインストール
 AVSを利用するために必要なものを諸々インストールします。
-
-### SSHとOpenSSL
-今回、デフォルトで設定されてたので、設定不要でした。
 
 ### VNC Serverのインストール
 
@@ -125,7 +121,7 @@ source ~/.bashrc
 ```
 
 ### クライアントIDとClientSecretを発行
-ここは [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#6---getting-started-with-alexa-voice-service) の画像のとおり進めればよいです。
+ここは [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#user-content-6---getting-started-with-alexa-voice-service) の画像のとおり進めればよいです。
 
 ### サーバとクライアントを起動
 下記のとおりサーバを起動します。 `config.js` には先ほど発行したクライアントIDとClientSecretを入力しておきます。
@@ -145,7 +141,7 @@ mvn install
 export DISPLAY=:1.0
 mvn exec:exec
 ```
-GUIに出てくるURLにアクセスしてデバイスの登録になります。ここも [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#10---obtain-authorization-from-login-with-amazon) の画像のとおりです。以上が終わると、AVSを利用できます。
+GUIに出てくるURLにアクセスしてデバイスの登録になります。ここも [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#user-content-10---obtain-authorization-from-login-with-amazon) の画像のとおりです。以上が終わると、AVSを利用できます。
 
 ## 次回予告
 次回はAlexa Skillsを登録して使ってみようと思います。乞うご期待。Don't miss out!

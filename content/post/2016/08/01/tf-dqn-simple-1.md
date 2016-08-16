@@ -2,7 +2,6 @@
 author = "Shinpei Kawahito"
 date = "2016-08-01T22:06:25+09:00"
 draft = false
-# tags = ["DQN", "TensorFlow"]
 title = "超シンプルにDQN (Deep Q Network) を実装してみる 〜導入編〜"
 +++
 
@@ -36,7 +35,7 @@ https://github.com/algolab-inc/tf-dqn-simple
 
 ### 環境構築
 はじめにソースコードをダウンロードします。
-```
+```sh
 git clone https://github.com/algolab-inc/tf-dqn-simple.git
 ```
 
@@ -47,14 +46,14 @@ https://www.tensorflow.org/versions/master/get_started/os_setup.html
 (2016/08/01現在、Python3.5.2 + Tensorflow0.9.0での動作を確認しています)
 
 Matolotlibはpipでインストールします。
-```
+```sh
 pip install matplotlib
 ```
 
 ### 学習
 
 環境が整ったら、ソースコードのディレクトリに移動して、train.pyを叩くと学習が始まります。
-```
+```sh
 cd tf-dqn-simple
 python train.py
 ```
@@ -68,7 +67,7 @@ EPOCH: 001/999 | WIN: 002 | LOSS: 0.0447 | Q_MAX: 0.0013
 数分ほどで学習が終わったかと思います。  
 では学習したモデルでテストしてみましょう。
 
-```
+```sh
 python test.py
 ```
 

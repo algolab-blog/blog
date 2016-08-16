@@ -11,6 +11,17 @@
 
 </div>
 
+<script src="/js/jquery-3.1.0.min.js"></script>
+<script>
+  var today = new Date();
+  var birthday = new Date('2112-09-03');
+  var diff = Math.ceil((birthday - today) / 86400000).toString();
+  var diff = diff.split(/(?=(?:\d{3})+$)/).join();
+  $("#doraemon-birthday").text("ドラえもん誕生まであと"+diff+"日。");
+console.log(diff);
+</script>
+
+
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 

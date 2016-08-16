@@ -2,7 +2,6 @@
 author = "Shinpei Kawahito"
 date = "2016-08-03T17:12:34+09:00"
 draft = false
-tags = []
 title = "TorchをAWSのGPUインスタンス (Ubuntu 14.04) で動かす"
 +++
 
@@ -25,7 +24,7 @@ Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-2d39803a をベースに構
 
 ## パッケージ更新
 インスタンスが起動したら、SSHでログインのうえ、まずパッケージを更新します。
-```
+```sh
 sudo apt-get update
 sudo apt-get upgrade -y
 ```
@@ -35,7 +34,7 @@ CUDAのインストールはハマりどころが多いですが、先人の知�
 https://gist.github.com/erikbern/78ba519b97b440e10640
 
 既存のドライバ (Noveau) を無効にします。
-```
+```sh
 echo -e "blacklist nouveau\nblacklist lbm-nouveau\noptions nouveau modeset=0\nalias nouveau off\nalias lbm-nouveau off\n" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
 echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 sudo update-initramfs -u
@@ -43,14 +42,14 @@ sudo reboot
 ```
 
 必要なカーネルモジュールをインストールします。
-```
+```sh
 sudo apt-get install -y linux-image-extra-virtual
 sudo reboot
 sudo apt-get install -y linux-source linux-headers-`uname -r`
 ```
 
 CUDA7.5をインストールします。
-```
+```sh
 wget http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda_7.5.18_linux.run
 chmod +x cuda_7.5.18_linux.run
 ./cuda_7.5.18_linux.run -extract=`pwd`/nvidia_installers
@@ -61,7 +60,7 @@ sudo ./cuda-linux64-rel-7.5.18-19867135.run
 ```
 
 途中でシンボリックリンクを作成するか聞かれますが、yesを選択します。
-```
+```sh
 Would you like to create a symbolic link /usr/local/cuda pointing to /usr/local/cuda-7.5? ((y)es/(n)o/(a)bort) [ default is yes ]: y
 ```
 
@@ -79,7 +78,7 @@ https://developer.nvidia.com/cudnn
 {{<img_rel "cudnn.png">}}
 
 ダウンロードしたファイルをサーバへ転送後、サーバ上で展開します。
-```
+```sh
 tar -xzf cudnn-7.5-linux-x64-v5.0-ga.tgz
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda-7.5/lib64
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
@@ -89,7 +88,7 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 公式に従って、インストールします。  
 http://torch.ch/docs/getting-started.html  
 
-```
+```sh
 sudo apt-get install -y git
 git clone https://github.com/torch/distro.git ~/torch --recursive
 cd ~/torch; bash install-deps;
@@ -97,7 +96,7 @@ cd ~/torch; bash install-deps;
 ```
 
 環境変数を.bashrcに書き込むか聞かれますが、yesを選択します。
-```
+```sh
 Do you want to automatically prepend the Torch install location
 to PATH and LD_LIBRARY_PATH in your /home/ubuntu/.bashrc? (yes/no)
 [yes] >>> 
@@ -105,12 +104,12 @@ yes
 ```
 
 環境変数を反映します。
-```
+```sh
 source ~/.bashrc
 ```
 
 最後に、CUDAおよびcuDNNを使うためのLuaライブラリをインストールします。
-```
+```sh
 luarocks install cutorch
 luarocks install cunn
 luarocks install cunnx

@@ -2,7 +2,6 @@
 author = "Shinpei Kawahito"
 date = "2016-07-30T15:50:23+09:00"
 draft = false
-tags = ["seq2seq", "bot"]
 title = "Seq2Seqモデルを用いたチャットボット作成 〜英会話のサンプルを動かす〜"
 +++
 
@@ -37,7 +36,7 @@ https://github.com/macournoyer/neuralconvo#installing
 筆者は下記の環境をベースに、追加で必要なLuaモジュールをインストール (更新) しました。  
 [TorchをAWSのGPUインスタンス (Ubuntu 14.04) で動かす]({{<ref "post/2016/08/03/torch-aws-gpu-ubuntu.md">}})
 
-```
+```sh
 luarocks install nn
 luarocks install rnn
 luarocks install penlight
@@ -47,7 +46,7 @@ luarocks install penlight
 データセットは、下記で公開されている映画の台詞コーパスを用います。  
 http://www.mpi-sws.org/~cristian/Cornell_Movie-Dialogs_Corpus.html
 
-```
+```sh
 git clone https://github.com/macournoyer/neuralconvo.git
 cd neuralconvo/data
 wget http://www.mpi-sws.org/~cristian/data/cornell_movie_dialogs_corpus.zip
@@ -57,7 +56,7 @@ mv cornell\ movie-dialogs\ corpus cornell_movie_dialogs
 
 ## 学習
 準備が整ったら学習をしてみます。
-```
+```sh
 th train.lua --cuda --dataset 50000 --hiddenSize 1000
 ```
 
@@ -68,7 +67,7 @@ th train.lua --cuda --dataset 50000 --hiddenSize 1000
 ## テスト
 学習したモデルを用いて実際に会話をしてみました。
 
-```
+```sh
 th eval.lua
 ```
 >
