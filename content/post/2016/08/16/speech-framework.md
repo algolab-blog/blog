@@ -16,7 +16,7 @@ https://developer.apple.com/library/prerelease/content/samplecode/SpeakToMe/Intr
 https://developer.apple.com/programs/jp/
 
 ## Xcode 8 betaをMacにインストール
-Macから下記ページへアクセスし、Xcode 8.0 betaをダウンロード、インストールします。  
+Macから下記ページへアクセスし、Xcode 8 betaをダウンロード、インストールします。  
 https://developer.apple.com/download/
 
 ## iOS 10 betaをiPhone にインストール
