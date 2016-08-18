@@ -1,4 +1,4 @@
-/* font-color */
+/* font color */
 body {
   color: #111;
 }
@@ -11,7 +11,7 @@ header h2 {
   color: #333;
 }
 
-/* link */
+/* link decoration */
 a:hover {
   text-decoration: underline;
 }
@@ -21,7 +21,7 @@ a:hover {
 }
 
 
-/* border-color */
+/* article header */
 .article-header {
   border-color: #999;
 }
