@@ -64,7 +64,7 @@ th train.lua --cuda --dataset 50000 --hiddenSize 1000
 
 {{<img_rel "error.png">}}
 
-## テスト
+## 会話してみる
 学習したモデルを用いて実際に会話をしてみました。
 
 ```sh
@@ -91,11 +91,13 @@ __neuralconvo>__ I've been watching over the phone thing...
 
 うーん。深い...!?
 
-## 評価
+## 会話が成り立たないケースもある
 上記のように会話として成立するものもあれば、全く成り立たないケースもありました。
 
 >
 __you>__ What color is the sky?  
 __neuralconvo>__ The other plate is currently in new york, in some kind of a tree in a decent, don
 
-知識が足りないのはデータセットの不足で、文章として成立していないのは学習不足、といったところでしょうか。  
+## おわりに
+実用的に使える精度か、という点では疑問符が残るものの、End-to-End で学習ができるというのは魅力的です。  
+いかに有用なデータセットを構築するか、が重要なポイントとなってきそうです。
