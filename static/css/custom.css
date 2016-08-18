@@ -90,5 +90,6 @@ article ul {
 }
 
 #sidebar li a {
-  color: #29abe2;
+  /* color: #29abe2; */
+  color: #111;
 }
