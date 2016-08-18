@@ -35,11 +35,16 @@ title = "麻雀カメラプロジェクト再始動？ 〜dlib + Selective Searc
 ## Selective Search
 DeepLearning界隈では、物体検出
 
-## 
+## dlibのインストール
+Python版が公開されているので、インストールします。  
+筆者はPython環境にAnacondaを用いているので、conda経由でインストールを行いました。
+
 ```sh
 conda install -c mempo dlib
 ```
 
+Anacondaを用いたPython環境構築については下記の記事が詳しいです。  
+[データサイエンティストを目指す人のpython環境構築 2016](http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c)
 
 領域
 Faster R-CNN

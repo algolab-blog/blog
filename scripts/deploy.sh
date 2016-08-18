@@ -1,5 +1,5 @@
 #!/bin/sh
-echo -e "Deploying updates to GitHub..."
+echo "Deploying updates to GitHub..."
 
 # Clean up
 rm -rf public/*
