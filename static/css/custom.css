@@ -64,7 +64,7 @@ article ul {
 }
 
 /* subtitle */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #doraemon-birthday:before {
     content: "\A" ;
     white-space: pre ;
@@ -82,7 +82,7 @@ article ul {
 #sidebar h3 {
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 #sidebar ul {
