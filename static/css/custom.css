@@ -1,4 +1,4 @@
-/* basic styles */
+/* font-color */
 body {
   color: #111;
 }
@@ -7,25 +7,27 @@ header a, .summary h2 a {
   color: #111 !important;
 }
 
-header h2, {
+header h2 {
   color: #333;
+}
+
+/* border-color */
+.article-header {
+  border-color: #999;
+}
+
+/* summary */
+.summary h2 a:hover {
+  text-decoration: underline;
 }
 
 .summary p {
   margin-top: 10px;
 }
 
-.summary h2 a:hover {
-  text-decoration: underline;
-}
-
 .summary .permalink {
   text-align: right;
   text-decoration: underline;
-}
-
-.article-header {
-  border-color: #999;
 }
 
 /* img */
@@ -52,10 +54,18 @@ article ul {
   }
 }
 
-/* doraemon */
+/* subtitle */
 @media (max-width: 768px) {
   #doraemon-birthday:before {
     content: "\A" ;
     white-space: pre ;
   }
 }
+
+@media (min-width: 768px) {
+  .site-subtitle:after {
+    content: "。" ;
+    white-space: pre ;
+  }
+}
+
