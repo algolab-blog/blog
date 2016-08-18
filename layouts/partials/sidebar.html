@@ -1,0 +1,18 @@
+<div id="sidebar" class="row gutters">
+  <div class="col span_6">
+    <h3>最新記事</h3>
+    <ul>
+      {{ range first 10 (where .Site.Pages "Type" "post") }}
+        <li><a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a></li>
+      {{ end }}
+    <ul>
+  </div>
+  <div class="col span_6">
+    <h3>タグ</h3>
+    <ul>
+      {{ range $key, $value := .Site.Taxonomies.tags.ByCount }}
+        <li><a href="/tags/{{ $value.Name | urlize }}">{{ $value.Name }} ({{ $value.Count }})</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</div>

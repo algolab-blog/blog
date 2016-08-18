@@ -2,6 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-08-11T19:08:44+09:00"
 draft = false
+tags = ["音声認識"]
 title = "Amazon Echoを6,000円で自作する 〜Raspberry Pi 3 + Alexa Voice Services (AVS)〜"
 +++
 

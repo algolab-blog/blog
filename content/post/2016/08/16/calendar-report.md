@@ -2,6 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-08-16T17:34:11+09:00"
 draft = false
+tags = ["プロダクト"]
 title = "Googleカレンダー解析ツール作りました 〜時間の使い方チェッカー〜"
 +++
 

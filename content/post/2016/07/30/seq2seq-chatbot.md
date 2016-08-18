@@ -2,6 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-07-30T15:50:23+09:00"
 draft = false
+tags= ["チャットボット", "自然言語処理"]
 title = "Seq2Seqモデルを用いたチャットボット作成 〜英会話のサンプルを動かす〜"
 +++
 

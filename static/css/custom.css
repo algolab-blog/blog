@@ -11,6 +11,16 @@ header h2 {
   color: #333;
 }
 
+/* link */
+a:hover {
+  text-decoration: underline;
+}
+
+#site-title a:hover {
+  text-decoration: none;
+}
+
+
 /* border-color */
 .article-header {
   border-color: #999;
@@ -18,7 +28,6 @@ header h2 {
 
 /* summary */
 .summary h2 a:hover {
-  text-decoration: underline;
 }
 
 .summary p {
@@ -67,4 +76,19 @@ article ul {
     content: "。" ;
     white-space: pre ;
   }
+}
+
+/* sidebar */
+#sidebar h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+#sidebar ul {
+  margin-left: 1em;
+}
+
+#sidebar li a {
+  color: #29abe2;
 }
