@@ -2,7 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-08-01T22:06:25+09:00"
 draft = false
-tags = ["強化学習"]
+tags = ["reinforcement-learning"]
 title = "超シンプルにDQN (Deep Q Network) を実装してみる 〜導入編〜"
 +++
 

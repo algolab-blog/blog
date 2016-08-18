@@ -2,7 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-08-17T15:28:18+09:00"
 draft = true
-tags = ["画像認識", "プロダクト"]
+tags = ["image-recognition", "product"]
 title = "麻雀カメラプロジェクト再始動？ 〜dlib + Selective Search (R-CNN) で牌検出を試みる〜"
 +++
 

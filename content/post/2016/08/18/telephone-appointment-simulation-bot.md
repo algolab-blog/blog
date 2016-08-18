@@ -2,7 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-08-18T15:20:16+09:00"
 draft = false
-tags = ["チャットボット", "プロダクト"]
+tags = ["chat-bot", "product"]
 title = "テレアポ模擬トレーニングBot 〜コミュニケーション教育ツールとしてのチャットボットの活用可能性〜"
 +++
 

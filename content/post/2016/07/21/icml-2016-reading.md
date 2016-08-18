@@ -2,7 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-07-22T10:14:41+09:00"
 draft = false
-tags= ["勉強会"]
+tags= ["study-session"]
 title = "ICML2016読み会まとめ"
 +++
 

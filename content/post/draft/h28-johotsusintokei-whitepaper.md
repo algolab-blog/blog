@@ -2,7 +2,7 @@
 author = "Shinpei Kawahito"
 date = "2016-08-18T15:24:07+09:00"
 draft = true
-tags = ["レポート"]
+tags = ["report"]
 title = "H28年版情報通信白書"
 +++
 
