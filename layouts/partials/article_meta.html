@@ -1,4 +1,4 @@
-{{ $tags := .Site.Data.tags }}
+{{ $taxonomies := .Site.Data.taxonomies }}
 <div class="meta">
   {{ if eq .Type "post" }}
     <span>{{ .Date.Format "2006/01/02" }}</span>
@@ -6,7 +6,7 @@
   {{ if .Params.tags }}
     <span>|</span>
     {{ range .Params.tags }}
-      <a href="/tags/{{ . | urlize }}">#{{ default . (index $tags (printf "%s" . )) }}</a>&nbsp;
+      <a href="/tags/{{ . | urlize }}">#{{ default . (index $taxonomies (printf "%s" . )) }}</a>&nbsp;
     {{ end }}
   {{ end }}
   {{ with .Params.author }}<span>|&nbsp;{{ . }}{{end}}</span>

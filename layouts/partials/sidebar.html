@@ -10,9 +10,9 @@
   <div class="col span_6">
     <h3>タグ</h3>
     <ul>
-      {{ $tags := .Site.Data.tags }}
+      {{ $taxonomies := .Site.Data.taxonomies }}
       {{ range $key, $value := .Site.Taxonomies.tags.ByCount }}
-        {{ $displayName := default $value.Name (index $tags (printf "%s" $value.Name)) }}
+        {{ $displayName := default $value.Name (index $taxonomies (printf "%s" $value.Name)) }}
         <li><a href="/tags/{{ $value.Name | urlize }}">{{ $displayName }} ({{ $value.Count }})</a></li>
       {{ end }}
     </ul>

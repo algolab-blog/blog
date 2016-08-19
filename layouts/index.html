@@ -2,7 +2,7 @@
 
 <!-- Main Section Layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<main id="index" role="main">
+<main id="list" role="main">
   <!-- <div class="article&#45;header light&#45;gray"><h1>Recent Articles</h1></div> -->
   {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
   {{ range $paginator.Pages }}

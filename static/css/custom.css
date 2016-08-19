@@ -27,9 +27,6 @@ a:hover {
 }
 
 /* summary */
-.summary h2 a:hover {
-}
-
 .summary p {
   margin-top: 10px;
 }
@@ -37,6 +34,10 @@ a:hover {
 .summary .permalink {
   text-align: right;
   text-decoration: underline;
+}
+
+.summary .meta a {
+  color: #999 !important;
 }
 
 /* img */
@@ -80,8 +81,9 @@ article ul {
 
 /* sidebar */
 #sidebar h3 {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
+  border-left: 4px solid #999;
+  /* border-bottom: 1px solid #ddd; */
+  padding: 0 0 0 10px;
   margin: 10px 0;
 }
 
@@ -92,4 +94,9 @@ article ul {
 #sidebar li a {
   /* color: #29abe2; */
   color: #111;
+}
+
+/* tag page */
+main.tag {
+  margin-bottom: 30px;
 }
