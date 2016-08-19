@@ -82,7 +82,6 @@ article ul {
 /* sidebar */
 #sidebar h3 {
   border-left: 4px solid #999;
-  /* border-bottom: 1px solid #ddd; */
   padding: 0 0 0 10px;
   margin: 10px 0;
 }
@@ -99,4 +98,13 @@ article ul {
 /* tag page */
 main.tag {
   margin-bottom: 30px;
+}
+
+/* taxonomies page */
+ul.taxonomies {
+  margin-left: 1em;
+}
+
+ul.taxonomies a {
+  color: #111;
 }

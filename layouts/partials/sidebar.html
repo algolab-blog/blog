@@ -12,8 +12,11 @@
     <ul>
       {{ $taxonomies := .Site.Data.taxonomies }}
       {{ range $key, $value := .Site.Taxonomies.tags.ByCount }}
-        {{ $displayName := default $value.Name (index $taxonomies (printf "%s" $value.Name)) }}
-        <li><a href="/tags/{{ $value.Name | urlize }}">{{ $displayName }} ({{ $value.Count }})</a></li>
+        <li>
+          <a href="/tags/{{ $value.Name | urlize }}">
+            {{ default $value.Name (index $taxonomies ($value.Name | urlize)) }} ({{ $value.Count }})
+          </a>
+        </li>
       {{ end }}
     </ul>
   </div>
