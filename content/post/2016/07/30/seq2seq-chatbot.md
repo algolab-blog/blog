@@ -2,8 +2,8 @@
 author = "Shinpei Kawahito"
 date = "2016-07-30T15:50:23+09:00"
 draft = false
-tags= ["chat-bot", "nlp"]
-title = "Seq2Seqモデルを用いたチャットボット作成 〜英会話のサンプルを動かす〜"
+tags= ["chat-bot", "nlp", "torch"]
+title = "Seq2Seqモデルを用いたチャットボット作成 〜英会話のサンプルをTorchで動かす〜"
 +++
 
 最近、チャットボットが話題となっていますが、自然な会話を成り立たせること、は大きな課題の一つです。  

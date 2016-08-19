@@ -10,3 +10,6 @@ title = "H28年版情報通信白書"
 
 特集　IoT・ビッグデータ・AI～ネットワークとデータが創造する新たな価値～  
 http://www.soumu.go.jp/johotsusintokei/whitepaper/ja/h28/pdf/index.html
+
+270
+271
