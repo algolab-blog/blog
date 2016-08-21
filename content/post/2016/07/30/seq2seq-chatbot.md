@@ -38,9 +38,9 @@ https://github.com/macournoyer/neuralconvo#installing
 [TorchをAWSのGPUインスタンス (Ubuntu 14.04) で動かす]({{<ref "post/2016/08/03/torch-aws-gpu-ubuntu.md">}})
 
 ```sh
-luarocks install nn
-luarocks install rnn
-luarocks install penlight
+$ luarocks install nn
+$ luarocks install rnn
+$ luarocks install penlight
 ```
 
 ### データセットの準備
@@ -48,17 +48,17 @@ luarocks install penlight
 http://www.mpi-sws.org/~cristian/Cornell_Movie-Dialogs_Corpus.html
 
 ```sh
-git clone https://github.com/macournoyer/neuralconvo.git
-cd neuralconvo/data
-wget http://www.mpi-sws.org/~cristian/data/cornell_movie_dialogs_corpus.zip
-unzip cornell_movie_dialogs_corpus.zip
-mv cornell\ movie-dialogs\ corpus cornell_movie_dialogs
+$ git clone https://github.com/macournoyer/neuralconvo.git
+$ cd neuralconvo/data
+$ wget http://www.mpi-sws.org/~cristian/data/cornell_movie_dialogs_corpus.zip
+$ unzip cornell_movie_dialogs_corpus.zip
+$ mv cornell\ movie-dialogs\ corpus cornell_movie_dialogs
 ```
 
 ## 学習
 準備が整ったら学習をしてみます。
 ```sh
-th train.lua --cuda --dataset 50000 --hiddenSize 1000
+$ th train.lua --cuda --dataset 50000 --hiddenSize 1000
 ```
 
 学習時間は4日弱で、エラー率の推移は下記となりました。
@@ -69,7 +69,7 @@ th train.lua --cuda --dataset 50000 --hiddenSize 1000
 学習したモデルを用いて実際に会話をしてみました。
 
 ```sh
-th eval.lua
+$ th eval.lua
 ```
 >
 __you>__ Hello?  

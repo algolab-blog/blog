@@ -26,8 +26,8 @@ Ubuntu Server 14.04 LTS (HVM), SSD Volume Type - ami-2d39803a をベースに構
 ## パッケージ更新
 インスタンスが起動したら、SSHでログインのうえ、まずパッケージを更新します。
 ```sh
-sudo apt-get update
-sudo apt-get upgrade -y
+$ sudo apt-get update
+$ sudo apt-get upgrade -y
 ```
 
 ## CUDAインストール
@@ -36,7 +36,7 @@ https://gist.github.com/erikbern/78ba519b97b440e10640
 
 既存のドライバ (Noveau) を無効にします。
 ```sh
-echo -e "blacklist nouveau\nblacklist lbm-nouveau\noptions nouveau modeset=0\nalias nouveau off\nalias lbm-nouveau off\n" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
+$ echo -e "blacklist nouveau\nblacklist lbm-nouveau\noptions nouveau modeset=0\nalias nouveau off\nalias lbm-nouveau off\n" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
 echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
 sudo update-initramfs -u
 sudo reboot
@@ -44,20 +44,20 @@ sudo reboot
 
 必要なカーネルモジュールをインストールします。
 ```sh
-sudo apt-get install -y linux-image-extra-virtual
-sudo reboot
-sudo apt-get install -y linux-source linux-headers-`uname -r`
+$ sudo apt-get install -y linux-image-extra-virtual
+$ sudo reboot
+$ sudo apt-get install -y linux-source linux-headers-`uname -r`
 ```
 
 CUDA7.5をインストールします。
 ```sh
-wget http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda_7.5.18_linux.run
-chmod +x cuda_7.5.18_linux.run
-./cuda_7.5.18_linux.run -extract=`pwd`/nvidia_installers
-cd nvidia_installers
-sudo ./NVIDIA-Linux-x86_64-352.39.run
-sudo modprobe nvidia
-sudo ./cuda-linux64-rel-7.5.18-19867135.run
+$ wget http://developer.download.nvidia.com/compute/cuda/7.5/Prod/local_installers/cuda_7.5.18_linux.run
+$ chmod +x cuda_7.5.18_linux.run
+$ ./cuda_7.5.18_linux.run -extract=`pwd`/nvidia_installers
+$ cd nvidia_installers
+$ sudo ./NVIDIA-Linux-x86_64-352.39.run
+$ sudo modprobe nvidia
+$ sudo ./cuda-linux64-rel-7.5.18-19867135.run
 ```
 
 途中でシンボリックリンクを作成するか聞かれますが、yesを選択します。
@@ -67,8 +67,8 @@ Would you like to create a symbolic link /usr/local/cuda pointing to /usr/local/
 
 CUDAのパスを環境変数に追加します。
 ```sh
-echo -e "export PATH=/usr/local/cuda/bin:\$PATH\nexport LD_LIBRARY_PATH=/usr/local/cuda/lib64:\$LD_LIBRARY_PATH" | tee -a ~/.bashrc
-source ~/.bashrc
+$ echo -e "export PATH=/usr/local/cuda/bin:\$PATH\nexport LD_LIBRARY_PATH=/usr/local/cuda/lib64:\$LD_LIBRARY_PATH" | tee -a ~/.bashrc
+$ source ~/.bashrc
 ```
 
 ## CUDNNインストール
@@ -80,9 +80,9 @@ https://developer.nvidia.com/cudnn
 
 ダウンロードしたファイルをサーバへ転送後、サーバ上で展開します。
 ```sh
-tar -xzf cudnn-7.5-linux-x64-v5.0-ga.tgz
-sudo cp cuda/lib64/libcudnn* /usr/local/cuda-7.5/lib64
-sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+$ tar -xzf cudnn-7.5-linux-x64-v5.0-ga.tgz
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda-7.5/lib64
+$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 ```
 
 ## Torchインストール
@@ -90,10 +90,10 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 http://torch.ch/docs/getting-started.html  
 
 ```sh
-sudo apt-get install -y git
-git clone https://github.com/torch/distro.git ~/torch --recursive
-cd ~/torch; bash install-deps;
-./install.sh
+$ sudo apt-get install -y git
+$ git clone https://github.com/torch/distro.git ~/torch --recursive
+$ cd ~/torch; bash install-deps;
+$ ./install.sh
 ```
 
 環境変数を.bashrcに書き込むか聞かれますが、yesを選択します。
@@ -106,15 +106,15 @@ yes
 
 環境変数を反映します。
 ```sh
-source ~/.bashrc
+$ source ~/.bashrc
 ```
 
 最後に、CUDAおよびcuDNNを使うためのLuaライブラリをインストールします。
 ```sh
-luarocks install cutorch
-luarocks install cunn
-luarocks install cunnx
-luarocks install https://raw.githubusercontent.com/soumith/cudnn.torch/master/cudnn-scm-1.rockspec
+$ luarocks install cutorch
+$ luarocks install cunn
+$ luarocks install cunnx
+$ luarocks install https://raw.githubusercontent.com/soumith/cudnn.torch/master/cudnn-scm-1.rockspec
 ```
 
 以上で環境構築は完了です。

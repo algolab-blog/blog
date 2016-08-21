@@ -37,7 +37,7 @@ https://github.com/algolab-inc/tf-dqn-simple
 ### 環境構築
 はじめにソースコードをダウンロードします。
 ```sh
-git clone https://github.com/algolab-inc/tf-dqn-simple.git
+$ git clone https://github.com/algolab-inc/tf-dqn-simple.git
 ```
 
 次に、動作のためにTensorFlowとMatplotlibが必要なので、インストールします。
@@ -48,15 +48,15 @@ https://www.tensorflow.org/versions/master/get_started/os_setup.html
 
 Matolotlibはpipでインストールします。
 ```sh
-pip install matplotlib
+$ pip install matplotlib
 ```
 
 ### 学習
 
 環境が整ったら、ソースコードのディレクトリに移動して、train.pyを叩くと学習が始まります。
 ```sh
-cd tf-dqn-simple
-python train.py
+$ cd tf-dqn-simple
+$ python train.py
 ```
 
 下記のようなログが出ていれば、正しく学習が行われています。
@@ -69,7 +69,7 @@ EPOCH: 001/999 | WIN: 002 | LOSS: 0.0447 | Q_MAX: 0.0013
 では学習したモデルでテストしてみましょう。
 
 ```sh
-python test.py
+$ python test.py
 ```
 
 > WIN: 001/001 (100.0%)  
