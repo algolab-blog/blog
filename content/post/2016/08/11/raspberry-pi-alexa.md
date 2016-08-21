@@ -48,8 +48,18 @@ Raspberry Pi用のディスプレイを用意してもよいですが、今回�
 1. MicroSD、LAN、 USBマイクロフォン、スピーカーを接続しておきます。
 1. 電源用としてUSBケーブルを挿すとBIOSが起動します。今回はOSであるRaspbian Jessieも自動で起動しました。
 
-## 必要なライブラリをインストール
-AVSを利用するために必要なものを諸々インストールします。
+## 必要なアカウント・ライブラリの準備
+AVSを利用するために必要なものを諸々準備します。
+
+### Amazon Developer アカウントの登録
+下記よりアカウントを登録します。登録済みであれば不要です。  
+https://developer.amazon.com/login.html
+
+### サンプルアプリのダウンロード
+公式のGithub上にある [Sample app](https://github.com/amzn/alexa-avs-raspberry-pi/archive/master.zip) をダウンロード&解凍して下記のようにデスクトップなどのパスに保存します。
+```sh
+/home/pi/Desktop/alexa-avs-raspberry-pi-master/
+```
 
 ### VNC Serverのインストール
 
