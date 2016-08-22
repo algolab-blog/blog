@@ -88,8 +88,8 @@ $ conda update -y conda
 $ pip install --upgrade pip
 ```
 
-### 深層学習ライブラリ
-#### TensorFlow
+## 深層学習ライブラリ
+### TensorFlow
 Googleの深層学習ライブラリ。``conda``経由で最新バージョンを一発でインストールします。  
 https://www.tensorflow.org/
 
@@ -97,14 +97,14 @@ https://www.tensorflow.org/
 $ conda install -y -c jjhelmus tensorflow
 ```
 
-#### Chainer
+### Chainer
 PFNの深層学習ライブラリ  
 http://chainer.org/
 ```sh
 $ pip install chainer
 ```
 
-#### Keras
+### Keras
 TensorFlowおよびTheanoのラッパー。同時にTheanoも入ります。  
 https://keras.io/
 
@@ -112,30 +112,30 @@ https://keras.io/
 $ pip install keras
 ```
 
-### 画像認識
-#### ImageMagick
+## 画像認識
+### ImageMagick
 画像処理ライブラリ。``conda``経由で本体もまとめてインストールします。  
 http://imagemagick.org/script/index.php
 
 ```sh
 $ conda install -y -c kalefranz imagemagick
 ```
-#### OpenCV
+### OpenCV
 コンピュータビジョンライブラリ  
 http://opencv.org/
 
 ```sh
 $ conda install -y -c menpo opencv3
 ```
-#### Dlib
+### Dlib
 画像処理系が充実している機械学習ライブラリ  
 http://dlib.net/
 ```sh
 $ conda install -y -c menpo dlib
 ```
 
-### 音声認識
-音声・動画処理ライブラリ。Ubuntu16.04から本体は```apt```で入るようになりました。  
+## 音声認識
+音声・動画処理ライブラリ。Ubuntu16.04から本体は``apt-get``で入るようになりました。  
 https://ffmpeg.org/
 
 ```sh
@@ -143,16 +143,16 @@ $ sudo apt install -y ffmpeg
 $ pip install ffmpy
 ```
 
-### 自然言語処理
-#### MeCab
-形態素解析エンジン。本体は```apt-get```でインストールします。  
+## 自然言語処理
+### MeCab
+形態素解析エンジン。本体は``apt-get``でインストールします。  
 http://taku910.github.io/mecab/
 
 ```sh
 $ sudo apt-get -y install libmecab-dev mecab mecab-ipadic mecab-ipadic-utf8
 $ pip install mecab-python3
 ```
-#### gensim
+### gensim
 トピックモデルのライブラリ  
 https://radimrehurek.com/gensim/
 
@@ -160,8 +160,8 @@ https://radimrehurek.com/gensim/
 $ pip install gensim
 ```
 
-### 強化学習
-#### OpenAI Gym
+## 強化学習
+### OpenAI Gym
 強化学習のトレーニング環境  
 https://gym.openai.com/
 ```sh
