@@ -2,11 +2,11 @@
 author = "Shinpei Kawahito"
 date = "2016-08-21T17:22:48+09:00"
 draft = false
-tags = ["環境構築"]
+tags = ["development-environment"]
 title = "【随時更新】pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環境をオールインワンで整える"
 +++
 
-機械学習系のPython開発環境は、[Vagrant](https://www.vagrantup.com/) を用いた [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) の仮想環境上に構築しています。  
+筆者の機械学習系のPython開発環境は、[Vagrant](https://www.vagrantup.com/) を用いた [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) 上に構築しています。  
 ここでは、画像認識、音声認識、自然言語処理などに必要な環境をオールインワンで構築する手順をまとめます。  
 (2016/08/21 初版公開)
 
@@ -24,20 +24,17 @@ $ uname -a
 Linux vagrant 4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-## パッケージのインストール
-まず、汎用的に使うパッケージをインストールします。
-```sh
-sudo apt-get install -y git swig
-```
-
 ## pyenv + Anaconda の環境を構築
 Python環境は、pyenv + Anacodaを用いて構築します。  
 pyenvやAnacondaの概要やメリットについては、下記の記事に詳しくまとまっています。  
 [データサイエンティストを目指す人のpython環境構築 2016](http://qiita.com/y__sama/items/5b62d31cb7e6ed50f02c)
 
+上記の記事にあるように、ここでもpyenvはAnacondaのインストーラとしてのみ使用し、Python環境の切り替えはAnacondaで行うこととします。
+
 ### 必要なパッケージのインストール
+まず、必要なパッケージをインストールします。
 ```sh
-$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev
+$ sudo apt-get install -y git make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev
 ```
 
 ### pyenvのインストール
@@ -71,6 +68,8 @@ $ pyenv install -l | grep anaconda3
 ```sh
 $ pyenv install anaconda3-4.1.0
 $ pyenv global anaconda3-4.1.0
+$ echo 'export PATH="$PYENV_ROOT/versions/anaconda3-4.1.0/bin/:$PATH"' >> ~/.bashrc
+$ source ~/.bashrc
 ```
 
 Pythonの環境を確認します。
@@ -80,18 +79,18 @@ Python 3.5.1 :: Anaconda 4.1.0 (64-bit)
 ```
 
 ## Pythonライブラリのインストール
-以下、用途に応じて必要なPythonライブラリをインストールしていきます。  
-``conda``が便利なものは``conda``で、それ以外は``pip``で行います。
+以下、用途に応じて必要なPythonライブラリ (+ 本体) をインストールしていきます。  
+``conda``経由が便利なものは``conda``で、それ以外は``pip``で行います。
 
 諸々インストールする前に自身を更新しておきます。
 ```sh
-conda update -y conda
-pip install --upgrade pip
+$ conda update -y conda
+$ pip install --upgrade pip
 ```
 
 ### 深層学習ライブラリ
 #### TensorFlow
-Googleの深層学習ライブラリ。```conda```経由で最新バージョンをインストールします。  
+Googleの深層学習ライブラリ。``conda``経由で最新バージョンを一発でインストールします。  
 https://www.tensorflow.org/
 
 ```sh
@@ -99,21 +98,14 @@ $ conda install -y -c jjhelmus tensorflow
 ```
 
 #### Chainer
-PFNの深層学習ライブラリ。  
+PFNの深層学習ライブラリ  
 http://chainer.org/
 ```sh
 $ pip install chainer
 ```
 
-### Theano
-2008年から開発されている古参のライブラリ。  
-http://deeplearning.net/software/theano/
-```sh
-$ pip install theano
-```
-
 #### Keras
-TensorFlowおよびTheanoのラッパー。  
+TensorFlowおよびTheanoのラッパー。同時にTheanoも入ります。  
 https://keras.io/
 
 ```sh
@@ -122,21 +114,21 @@ $ pip install keras
 
 ### 画像認識
 #### ImageMagick
-画像処理ライブラリ。  
+画像処理ライブラリ。``conda``経由で本体もまとめてインストールします。  
 http://imagemagick.org/script/index.php
 
 ```sh
 $ conda install -y -c kalefranz imagemagick
 ```
 #### OpenCV
-コンピュータビジョンライブラリ。  
+コンピュータビジョンライブラリ  
 http://opencv.org/
 
 ```sh
 $ conda install -y -c menpo opencv3
 ```
 #### Dlib
-画像認識が充実している機械学習ライブラリ。  
+画像処理系が充実している機械学習ライブラリ  
 http://dlib.net/
 ```sh
 $ conda install -y -c menpo dlib
@@ -161,7 +153,7 @@ $ sudo apt-get -y install libmecab-dev mecab mecab-ipadic mecab-ipadic-utf8
 $ pip install mecab-python3
 ```
 #### gensim
-トピックモデルのライブラリ。  
+トピックモデルのライブラリ  
 https://radimrehurek.com/gensim/
 
 ```sh
@@ -170,7 +162,7 @@ $ pip install gensim
 
 ### 強化学習
 #### OpenAI Gym
-強化学習のトレーニング環境。  
+強化学習のトレーニング環境  
 https://gym.openai.com/
 ```sh
 $ pip install gym
