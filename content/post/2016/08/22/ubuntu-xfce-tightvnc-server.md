@@ -1,7 +1,7 @@
 +++
 author = "Shinpei Kawahito"
-date = "2016-08-22T17:17:58+09:00"
-draft = true
+date = "2016-08-22T17:53:57+09:00"
+draft = false
 tags = ["development-environment"]
 title = "Ubuntu 16.04 LTSにXcfeとTightVNC Serverでリモートデスクトップ環境を構築する"
 +++

@@ -167,3 +167,8 @@ https://gym.openai.com/
 ```sh
 $ pip install gym
 ```
+
+## その他便利ツール
+### TightVNC Server
+リモートデスクトップ環境。下記の記事を参照してください。  
+[Ubuntu 16.04 LTSにXcfeとTightVNC Serverでリモートデスクトップ環境を構築する]({{<ref "post/2016/08/22/ubuntu-xfce-tightvnc-server.md">}})
