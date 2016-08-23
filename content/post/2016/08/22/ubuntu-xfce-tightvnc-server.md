@@ -63,9 +63,55 @@ MacのFinderから```移動``` > ```サーバーへ接続```で、VNCクライ�
 {{<img_rel "vnc_server.png">}}
 
 ### 停止
-以下のコマンドで停止できます。
+以下のコマンドで停止します。
 ```sh
 $ vncserver -kill :1
+```
+
+### 自動起動の設定
+#### 起動ファイルの作成
+```sh
+$ sudo vi /etc/systemd/system/vncserver@.service
+```
+
+```{{USERNAME}}```は環境に合わせて設定してください。
+
+```sh
+[Unit]
+Description=Start TightVNC server at startup
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User={{USERNAME}}
+PAMName=login
+PIDFile=/home/{{USERNAME}}/.vnc/%H:%i.pid
+ExecStartPre=-/usr/bin/vncserver -kill :%i > /dev/null 2>&1
+ExecStart=/usr/bin/vncserver -depth 24 -geometry 1280x800 :%i
+ExecStop=/usr/bin/vncserver -kill :%i
+
+[Install]
+WantedBy=multi-user.target
+```
+
+#### 自動起動の設定
+```sh
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable vncserver@1.service
+```
+
+### 起動
+以下のコマンドで手動で起動できるようになります。
+
+```sh
+$ sudo systemctl start vncserver@1
+```
+
+### ステータス確認
+ステータスは以下のコマンドで確認します。
+
+```sh
+$ sudo systemctl status vncserver@1
 ```
 
 ### キーの設定
