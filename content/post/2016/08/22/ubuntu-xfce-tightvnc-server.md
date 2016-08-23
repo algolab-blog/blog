@@ -100,14 +100,14 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl enable vncserver@1.service
 ```
 
-### 起動
+#### 起動
 以下のコマンドで手動で起動できるようになります。
 
 ```sh
 $ sudo systemctl start vncserver@1
 ```
 
-### ステータス確認
+#### ステータス確認
 ステータスは以下のコマンドで確認します。
 
 ```sh
@@ -122,4 +122,3 @@ $ sudo systemctl status vncserver@1
 ```Switch window for same application```を選択して、```Clear```することで、```Tab```キーが正常に動作するようになります。
 
 {{<img_rel "tab.png">}}
-
