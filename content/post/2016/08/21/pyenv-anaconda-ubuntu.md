@@ -3,12 +3,12 @@ author = "Shinpei Kawahito"
 date = "2016-08-21T17:22:48+09:00"
 draft = false
 tags = ["development-environment"]
-title = "【随時更新】pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環境をオールインワンで整える"
+title = "pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環境をオールインワンで整える【随時更新】"
 +++
 
 筆者の機械学習系のPython開発環境は、[Vagrant](https://www.vagrantup.com/) を用いた [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) 上に構築しています。  
 ここでは、画像認識、音声認識、自然言語処理などに必要な環境をオールインワンで構築する手順をまとめます。  
-(2016/08/22 最終更新)
+(最終更新日: 2016/08/22)
 
 ## OSバージョン
 OSバージョンは下記の通りです。  
@@ -136,10 +136,19 @@ http://opencv.org/
 $ conda install -y -c menpo opencv3
 ```
 ### Dlib
-画像処理系が充実している機械学習ライブラリ  
+画像処理系が充実している機械学習ライブラリ。```cmake```と```boost-python```も同時にインストールします。  
 http://dlib.net/
 ```sh
+$ sudo apt-get install libboost-python-dev cmake
 $ conda install -y -c wordsforthewise dlib
+```
+
+### Selective Search
+Alpacaが提供しているSelectiveSearchに特化したライブラリ  
+https://github.com/AlpacaDB/selectivesearch
+
+```sh
+$ pip install selectivesearch
 ```
 
 ## 音声認識

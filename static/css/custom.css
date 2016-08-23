@@ -129,13 +129,13 @@ article ul {
 #sidebar ul.tags li {
   display: inline-block;
   border: 1px solid #ccc;
-  padding: 3px;
+  padding: 5px;
   margin-bottom: 5px;
 }
 
 /* tag page */
 main.tag {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 /* taxonomies page */

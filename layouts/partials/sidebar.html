@@ -2,7 +2,7 @@
   <div class="col span_6">
     <h3>最新記事</h3>
     <ul>
-      {{ range first 10 (where .Site.Pages "Type" "post") }}
+      {{ range first 5 (where .Site.Pages "Type" "post") }}
         <li><a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a></li>
       {{ end }}
     <ul>
