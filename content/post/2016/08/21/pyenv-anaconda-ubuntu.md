@@ -8,7 +8,7 @@ title = "【随時更新】pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習�
 
 筆者の機械学習系のPython開発環境は、[Vagrant](https://www.vagrantup.com/) を用いた [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) 上に構築しています。  
 ここでは、画像認識、音声認識、自然言語処理などに必要な環境をオールインワンで構築する手順をまとめます。  
-(2016/08/21 初版公開)
+(2016/08/22 最終更新)
 
 ## OSバージョン
 OSバージョンは下記の通りです。  
@@ -24,6 +24,14 @@ $ uname -a
 Linux vagrant 4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
+## 汎用パッケージのインストール
+事前に、汎用的に必要なパッケージをインストールしておきます。
+
+```sh
+$ sudo apt-get install -y git swig cmake
+```
+
+
 ## pyenv + Anaconda の環境を構築
 Python環境は、pyenv + Anacodaを用いて構築します。  
 pyenvやAnacondaの概要やメリットについては、下記の記事に詳しくまとまっています。  
@@ -34,7 +42,7 @@ pyenvやAnacondaの概要やメリットについては、下記の記事に詳�
 ### 必要なパッケージのインストール
 まず、必要なパッケージをインストールします。
 ```sh
-$ sudo apt-get install -y git make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev
+$ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev
 ```
 
 ### pyenvのインストール
@@ -131,7 +139,7 @@ $ conda install -y -c menpo opencv3
 画像処理系が充実している機械学習ライブラリ  
 http://dlib.net/
 ```sh
-$ conda install -y -c menpo dlib
+$ conda install -y -c wordsforthewise dlib
 ```
 
 ## 音声認識

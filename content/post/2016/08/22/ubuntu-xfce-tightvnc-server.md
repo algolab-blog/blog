@@ -26,6 +26,8 @@ $ sudo apt-get install tightvncserver
 ```
 
 ### 起動設定
+VNCサーバーからXcfeを起動するように設定を行います。
+
 ```sh
 $ vi ~/.vnc/xstartup
 ```
@@ -65,3 +67,13 @@ MacのFinderから```移動``` > ```サーバーへ接続```で、VNCクライ�
 ```sh
 $ vncserver -kill :1
 ```
+
+### キーの設定
+デフォルトのままだとキーがうまく効かないので編集します。  
+```Applications``` > ```Settings``` > ```Window Manager``` > ```Keyboard```の設定を開きます。
+
+#### Tabの設定
+```Switch window for same application```を選択して、```Clear```することで、```Tab```キーが正常に動作するようになります。
+
+{{<img_rel "tab.png">}}
+
