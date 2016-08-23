@@ -121,6 +121,18 @@ article ul {
   color: #111;
 }
 
+#sidebar ul.tags {
+  margin-left: 0;
+  list-style: none;
+}
+
+#sidebar ul.tags li {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+
 /* tag page */
 main.tag {
   margin-bottom: 30px;
