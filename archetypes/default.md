@@ -1,7 +1,7 @@
 +++
-authors = "Shinpei Kawahito"
+authors = "kawahito"
 date = "now()"
 draft = true
-tags= []
+tags = []
 title = ""
 +++
