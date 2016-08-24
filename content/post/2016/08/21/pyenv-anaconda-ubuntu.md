@@ -24,14 +24,6 @@ $ uname -a
 Linux vagrant 4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-## 汎用パッケージのインストール
-事前に、汎用的に必要なパッケージをインストールしておきます。
-
-```sh
-$ sudo apt-get install -y git swig cmake
-```
-
-
 ## pyenv + Anaconda の環境を構築
 Python環境は、pyenv + Anacodaを用いて構築します。  
 pyenvやAnacondaの概要やメリットについては、下記の記事に詳しくまとまっています。  

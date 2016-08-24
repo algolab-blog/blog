@@ -6,7 +6,7 @@ tags = ["development-environment"]
 title = "Ubuntu 16.04 LTSにXcfeとTightVNC Serverでリモートデスクトップ環境を構築する"
 +++
 
-Macから [Vagrant](https://www.vagrantup.com/) 上の [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) へリモートデスクトップでアクセスする手順をまとめます。
+MacからUbuntu (16.04 LTS) へリモートデスクトップでアクセスする手順をまとめます。  
 
 ## デスクトップ環境のインストール
 デスクトップ環境には高速な軽量なXfceを用います。(お好みに合わせてください)  
