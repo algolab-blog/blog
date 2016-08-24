@@ -7,12 +7,10 @@ title = "VPNサーバのパブリックIPをDNSに登録する 〜Raspberry Pi�
 +++
 
 弊社オフィスではVPN環境を構築していますが、固定IPを取得していないため、パブリックIPが変わるたびにVPNサーバーの接続先を変更しなければならず面倒です。
-そこで定期的にIPアドレスを取得し、DNSに登録するようにします。
 
-実行環境は以下のとおりです。
+そこで定期的にIPアドレスを取得し、DNSに登録するようにしました。  
+ここでは、Raspberry Pi 上でAWS SDK for Python (Boto 3) を用いて定期実行させる手順をまとめます。
 
-* スクリプト実行: Raspberry Pi
-* DNS登録: AWS SDK for Python (Boto 3)
 
 ## AWS SDK for Python のインストールおよび設定
 DNSはAWSのRoute53で管理しており、その操作のためにSDKを導入します。  
