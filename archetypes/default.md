@@ -1,5 +1,5 @@
 +++
-author = "Shinpei Kawahito"
+authors = "Shinpei Kawahito"
 date = "now()"
 draft = true
 tags= []

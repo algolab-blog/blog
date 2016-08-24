@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+<div class="article-header"><h1>メンバー</h1></div>
+<ul class="taxonomies">
+{{ $authors := .Site.Data.authors }}
+{{ range $key, $value := .Data.Terms.ByCount }}
+  <li>
+    <a href="/authors/{{ $value.Name | urlize }}">
+      {{ (index $authors ($value.Name | urlize)).name }} ({{ $value.Count }})
+    </a>
+  </li>
+  {{ end }}
+</ul>
+
+{{ partial "footer.html" . }}

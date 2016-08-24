@@ -8,12 +8,21 @@
   <title>
     {{ $isHomePage := eq .Title .Site.Title }}
     {{ if eq .Data.Singular "tag" }}
-      {{ $title := .Title | urlize }}
-      {{ default $title (index .Site.Data.taxonomies $title) }}
+      {{ if .Data.Terms }}
+        タグ
+      {{ else }}
+        {{ index .Site.Data.tags (.Title | urlize) }}
+      {{ end }}
+    {{ else if eq .Data.Singular "author" }}
+      {{ if .Data.Terms }}
+        メンバー
+      {{ else }}
+        {{ (index .Site.Data.authors (.Title | urlize)).name }}
+      {{ end }}
     {{ else }}
       {{ .Title }}
     {{ end }}
-    {{ if eq $isHomePage false }} | {{ .Site.Title }}{{ end }}
+    {{ if eq $isHomePage false }}&nbsp;|&nbsp;{{ .Site.Title }}{{ end }}
   </title>
 
 

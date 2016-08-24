@@ -1,5 +1,5 @@
 +++
-author = "Shinpei Kawahito"
+authors = "kawahito"
 date = "2016-07-14T17:40:56+09:00"
 draft = false
 tags= ["robot", "study-session"]

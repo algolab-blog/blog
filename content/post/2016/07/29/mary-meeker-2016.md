@@ -1,5 +1,5 @@
 +++
-author = "Shinpei Kawahito"
+authors = "kawahito"
 date = "2016-07-29T11:47:41+09:00"
 draft = false
 tags= ["speech-recognition", "report"]

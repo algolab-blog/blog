@@ -1,5 +1,5 @@
 +++
-author = "Shinpei Kawahito"
+authors = "kawahito"
 date = "2016-08-11T19:08:44+09:00"
 draft = false
 tags = ["speech-recognition"]
@@ -152,7 +152,7 @@ $ mvn install
 $ export DISPLAY=:1.0
 $ mvn exec:exec
 ```
-GUIに出てくるURLにアクセスしてデバイスの登録になります。ここも [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#user-content-10---obtain-authorization-from-login-with-amazon) の画像のとおりです。以上が終わると、AVSを利用できます。
+GUIに出てくるURLにアクセスしてデバイスの登録になります。ここも [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#user-content-10---obtain-authorsization-from-login-with-amazon) の画像のとおりです。以上が終わると、AVSを利用できます。
 
 ## 次回予告
 次回はAlexa Skillsを登録して使ってみようと思います。乞うご期待。Don't miss out!

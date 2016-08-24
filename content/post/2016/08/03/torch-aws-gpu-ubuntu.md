@@ -1,5 +1,5 @@
 +++
-author = "Shinpei Kawahito"
+authors = "kawahito"
 date = "2016-08-03T17:12:34+09:00"
 draft = false
 tags = ["development-environment", "torch"]

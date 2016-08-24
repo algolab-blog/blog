@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+
+<div class="article-header"><h1>タグ</h1></div>
+<ul class="taxonomies">
+{{ $tags := .Site.Data.tags }}
+{{ range $key, $value := .Data.Terms.ByCount }}
+  <li>
+    <a href="/tags/{{ $value.Name | urlize }}">
+      {{ index $tags ($value.Name | urlize) }} ({{ $value.Count }})
+    </a>
+  </li>
+  {{ end }}
+</ul>
+
+{{ partial "footer.html" . }}
