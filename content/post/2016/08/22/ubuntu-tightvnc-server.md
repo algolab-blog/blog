@@ -3,17 +3,26 @@ authors = "kawahito"
 date = "2016-08-22T17:53:57+09:00"
 draft = false
 tags = ["development-environment"]
-title = "Ubuntu 16.04 LTSにXcfeとTightVNC Serverでリモートデスクトップ環境を構築する"
+title = "Ubuntu 16.04 LTSにXcfe (or LXDE) とTightVNC Serverでリモートデスクトップ環境を構築する"
 +++
 
 MacからUbuntu (16.04 LTS) へリモートデスクトップでアクセスする手順をまとめます。  
 
 ## デスクトップ環境のインストール
-デスクトップ環境には高速な軽量なXfceを用います。(お好みに合わせてください)  
+デスクトップ環境には高速な軽量なXfceもしくはLXDEを最小限の構成でインストールします。  
+(お好みに合わせてください)
+
+### Xfceの場合
 https://www.xfce.org/
 
 ```sh
 $ sudo apt-get install -y xfce4 xfce4-goodies
+```
+
+### LXDEの場合
+http://lxde.org/
+```sh
+$ sudo apt-get install -y lxde-core
 ```
 
 ## TightVNC Serverのセットアップ
@@ -32,10 +41,18 @@ VNCサーバーからXcfeを起動するように設定を行います。
 $ vi ~/.vnc/xstartup
 ```
 
+#### Xfceの場合
 ```
 #!/bin/bash
 xrdb $HOME/.Xresources
 startxfce4 &
+```
+
+#### LXDEの場合
+```
+#!/bin/bash
+xrdb $HOME/.Xresources
+lxsession -s LXDE &
 ```
 
 ### 起動
@@ -114,11 +131,10 @@ $ sudo systemctl start vncserver@1
 $ sudo systemctl status vncserver@1
 ```
 
-### キーの設定
+## Xfce固有の設定
 デフォルトのままだとキーがうまく効かないので編集します。  
 ```Applications``` > ```Settings``` > ```Window Manager``` > ```Keyboard```の設定を開きます。
 
-#### Tabの設定
 ```Switch window for same application```を選択して、```Clear```することで、```Tab```キーが正常に動作するようになります。
 
 {{<img_rel "tab.png">}}
