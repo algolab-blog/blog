@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-08-16T19:34:57+09:00"
 draft = false
-tags = ["speech-recognition"]
+tags = ["speech-recognition", "ios"]
 title = "iOSで音声認識 〜Speech Frameworkを試す〜"
 +++
 

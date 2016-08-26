@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-08-01T22:06:25+09:00"
 draft = false
-tags = ["reinforcement-learning", "tensorflow"]
+tags = ["reinforcement-learning", "dqn", "tensorflow"]
 title = "超シンプルにTensorFlowでDQN (Deep Q Network) を実装してみる 〜導入編〜"
 +++
 

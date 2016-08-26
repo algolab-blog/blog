@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-07-14T17:40:56+09:00"
 draft = false
-tags= ["robot", "study-session"]
+tags= ["robot", "study-session", "r-env", "robohon", "sota"]
 title = "R-env:連舞® ハンズオンで RoBoHoN（ロボホン）・ Sota（ソータ）と戯れてきた"
 +++
 

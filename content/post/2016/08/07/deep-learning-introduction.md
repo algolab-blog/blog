@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-08-07T15:46:48+09:00"
 draft = false
-tags = ["ai-training"]
+tags = ["ai-training", "image-recognition", "cnn"]
 title = "ディープラーニング徹底入門 〜AIトレーニング第1回〜"
 +++
 

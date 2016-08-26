@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-08-22T17:53:57+09:00"
 draft = false
-tags = ["development-environment"]
+tags = ["development-environment", "ubuntu"]
 title = "Ubuntu 16.04 LTSにXcfe (or LXDE) とTightVNC Serverでリモートデスクトップ環境を構築する"
 +++
 

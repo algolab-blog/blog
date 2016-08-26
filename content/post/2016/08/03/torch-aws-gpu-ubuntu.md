@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-08-03T17:12:34+09:00"
 draft = false
-tags = ["development-environment", "torch"]
+tags = ["development-environment", "torch", "ubuntu", "aws"]
 title = "TorchをAWSのGPUインスタンス (Ubuntu 14.04) で動かす"
 +++
 

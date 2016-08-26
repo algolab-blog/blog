@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-08-21T17:22:48+09:00"
 draft = false
-tags = ["development-environment"]
+tags = ["development-environment", "ubuntu"]
 title = "pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環境をオールインワンで整える【随時更新】"
 +++
 

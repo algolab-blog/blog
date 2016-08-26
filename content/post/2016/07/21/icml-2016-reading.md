@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-07-22T10:14:41+09:00"
 draft = false
-tags= ["study-session"]
+tags= ["study-session", "icml"]
 title = "ICML2016読み会まとめ"
 +++
 

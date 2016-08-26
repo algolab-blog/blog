@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-08-11T19:08:44+09:00"
 draft = false
-tags = ["speech-recognition"]
+tags = ["speech-recognition", "amazon-echo", "raspberry-pi"]
 title = "Amazon Echoを6,000円で自作する 〜Raspberry Pi 3 + Alexa Voice Services (AVS)〜"
 +++
 

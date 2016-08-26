@@ -1,0 +1,10 @@
+ <ul class="taxonomies tags">
+   {{ $tags := .Site.Data.tags }}
+   {{ range $key, $value := .Site.Taxonomies.tags.ByCount }}
+     <li>
+       <a href="/tags/{{ $value.Name | urlize }}">
+         {{ index $tags ($value.Name | urlize) }} ({{ $value.Count }})
+       </a>
+     </li>
+   {{ end }}
+ </ul>

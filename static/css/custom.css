@@ -109,7 +109,7 @@ article ul {
 #sidebar h3 {
   border-left: 4px solid #999;
   padding: 0 0 0 10px;
-  margin: 10px 0;
+  margin: 20px 0 10px 0;
 }
 
 #sidebar ul {
@@ -117,27 +117,23 @@ article ul {
 }
 
 #sidebar li a {
-  /* color: #29abe2; */
   color: #111;
 }
 
-#sidebar ul.tags {
-  margin-left: 0;
+/* tags */
+ul.tags {
+  margin-left: 0 !important;
   list-style: none;
 }
 
-#sidebar ul.tags li {
+ul.tags li {
   display: inline-block;
   border: 1px solid #ccc;
   padding: 5px;
   margin-bottom: 5px;
 }
 
-/* taxonomies page */
-ul.taxonomies {
-  margin-left: 1em;
-}
-
+/* taxonomies */
 ul.taxonomies a {
   color: #111;
 }

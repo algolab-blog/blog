@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-07-29T11:47:41+09:00"
 draft = false
-tags= ["speech-recognition", "report"]
+tags= ["speech-recognition", "report", "mary-meeker"]
 title = "音声は新しいパラダイムシフトになる 〜2016年度版メアリー・ミーカー氏レポートまとめ〜"
 +++
 

@@ -2,7 +2,7 @@
 authors = "kawahito"
 date = "2016-08-24T15:48:58+09:00"
 draft = false
-tags = ["development-environment"]
+tags = ["development-environment", "raspberry-pi"]
 title = "VPNサーバのパブリックIPをDNSに登録する 〜Raspberry Pi上で定期実行〜"
 +++
 
