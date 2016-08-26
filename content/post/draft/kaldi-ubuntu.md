@@ -11,10 +11,10 @@ draft = true
 
 ```sh
 git clone https://github.com/kaldi-asr/kaldi.git
-cd kaldi/
 ```
 
 ```sh
+cd kaldi
 cat INSTALL
 ```
 
@@ -30,12 +30,13 @@ go to src/ and follow INSTALL instructions there.
 ```
 
 ```sh
-cd tools/
+cd tools
 cat INSTALL
 ```
 
 ```sh
 To install the most important prerequisites for Kaldi:
+$ make -j 4
 
  first do
 
@@ -67,7 +68,7 @@ one of those scripts, it will tell you what to do.
 $ extras/check_dependencies.sh
 ```
 
-```
+```sh
 extras/check_dependencies.sh  
 extras/check_dependencies.sh: automake is not installed.
 extras/check_dependencies.sh: autoconf is not installed.
@@ -84,6 +85,54 @@ properly.  We recommend to run:
  sudo ln -s -f bash /bin/sh
 ```
 
-```
-$ sudo apt-get install libatlas3-base
+```sh
+$ sudo apt-get install  automake autoconf libtool subversion
+$ sudo apt-get install -y libatlas3-base
 $ sudo ln -s -f bash /bin/sh
+```
+
+```sh
+$ nproc
+1
+```
+
+```sh
+$ sudo make
+```
+
+```
+Warning: IRSTLM is not installed by default anymore. If you need IRSTLM
+Warning: use the script extras/install_irstlm.sh
+All done OK.
+```
+
+```sh
+$ cd ../src
+$ cat INSTALL
+```
+```sh
+These instructions are valid for UNIX-like systems (these steps have
+been run on various Linux distributions; Darwin; Cygwin).  For native Windows
+compilation, see ../windows/INSTALL.
+
+You must first have completed the installation steps in ../tools/INSTALL
+(compiling OpenFst; getting ATLAS and CLAPACK headers).
+
+The installation instructions are:
+./configure
+make depend
+make
+
+Note that "make" takes a long time; you can speed it up by running make
+in parallel if you have multiple CPUs, for instance 
+ make depend -j 8
+ make -j 8
+For more information, see documentation at http://kaldi-asr.org/doc/
+and click on "The build process (how Kaldi is compiled)".
+```
+
+```sh
+$ ./configure
+$ sudo make depend
+$ sudo make
+```
