@@ -13,10 +13,52 @@ date = "2016-08-29T16:10:04+09:00"
 こちらの記事の続きとなります。  
 [Amazon Echoを6,000円で自作する 〜Raspberry Pi 3 + Alexa Voice Services (AVS)〜]({{<ref "post/2016/08/11/raspberry-pi-alexa.md">}})
 
-前回はRaspberry PiからAVS (Alexa Voice Services) を使ってみましたが、今回は、好みの機能を追加できるAlexa Skills Kitを使ってみたいと思います。
+前回はRaspberry PiからAVS (Alexa Voice Services) を使ってみましたが、今回は、Alexa Skills Kitを使ってみたいと思います。
 
 公式の [ドキュメント](https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function) と [ポスト](https://developer.amazon.com/public/community/post/TxDJWS16KUPVKO/New-Alexa-Skills-Kit-Template-Build-a-Trivia-Skill-in-under-an-Hour) を参考に、今回は「Color Expert」のSkillを使ってみます。  
 Alexa SkillsはLambdaファンクション上で実行されるので、AWS LambdaとAlexa Skillsの設定が必要になります。
+
+## Alexa Skill Kit 概要
+Amazon Echo には好みの機能を追加できるSkillという機能があり、「カスタムスキル」と「スマートホームスキル」の2種類を登録することができます。
+
+https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-the-different-types-of-skills
+
+### カスタムスキル
+{{<img_rel "custom-skill.png">}}
+
+* ピザを注文したり、タクシーを呼んだり色々なことができる
+* Invocation Name (スキルの呼び名のこと、後述) で呼び出す
+* リクエストは「intent」としてマッピングされる
+ - ピザの注文 &rarr; OrderPizza intent
+
+### スマートホームスキル
+{{<img_rel "smart-home-skill.png">}}
+
+* Smart home device (灯りやエアコンなど) を操作できる
+* Invocation Nameで呼び出すのは不要 
+
+## Invocation Name (スキルの呼び名) のガイドライン
+https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/choosing-the-invocation-name-for-an-alexa-skill
+
+* 原則的に1単語はNG、 Launch phrase(ask, tell, etc...), Amazon, Alexaなどは禁止文字。
+* 呼び出し方には以下の3通りの方法がある
+
+### リクエストと一緒に呼び出す
+>
+“Alexa, Ask Daily Horoscopes for Gemini”  
+“Alexa, Talk to Daily Horoscopes and give me the horoscope for Taurus”  
+“Alexa, give me my Taurus horoscope using Daily Horoscopes”
+
+### リクエストなしで呼び出す
+>
+“Alexa, open Daily Horoscopes”  
+“Alexa, start Daily Horoscopes”  
+“Alexa, ask Daily Horoscopes”
+
+### Invocation Nameだけで呼び出す
+>
+“Alexa, Daily Horoscopes”
+
 
 ## AWS Lambdaの作成
 AWSマネジメントコンソールにログインし、[Lambda](https://console.aws.amazon.com/lambda/home) のページを開きます。
