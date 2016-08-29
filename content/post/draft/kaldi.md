@@ -1,9 +1,10 @@
 +++
 tags = [
   "speech-recognition",
-  "kaldi"
+  "kaldi",
+  "ubuntu"
 ]
-title = "Kaldiを使う ubuntu"
+title = "Kaldiを使う"
 authors = "kawahito"
 date = "2016-08-26T11:54:30+09:00"
 draft = true
