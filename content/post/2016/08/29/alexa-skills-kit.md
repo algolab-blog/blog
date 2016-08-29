@@ -5,7 +5,7 @@ tags = [
   "amazon-echo",
   "raspberry-pi"
 ]
-title = "Alexa Skills Kitを"
+title = "Alexa Skills KitをAWS Lamdaから使う"
 authors = "kawahito"
 date = "2016-08-29T16:10:04+09:00"
 +++
