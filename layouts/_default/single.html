@@ -8,12 +8,12 @@
       {{ partial "article_meta.html" . }}
     </div>
     <article>
-      {{ partial "share_this.html" . }}
+      {{ if eq .Type "post" }}{{ partial "share_this.html" . }}{{ end }}
       {{ .Content }}
-      {{ partial "share_this.html" . }}
+      {{ if eq .Type "post" }}{{ partial "share_this.html" . }}{{ end }}
       {{ partial "author.html" . }}
     </article>
-    {{ partial "disqus.html" . }}
+    {{ if eq .Type "post" }}{{ partial "disqus.html" . }}{{ end }}
   </main>
 
   {{ if eq .Type "post" }}

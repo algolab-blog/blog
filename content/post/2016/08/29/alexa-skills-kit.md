@@ -16,7 +16,7 @@ date = "2016-08-29T16:10:04+09:00"
 前回はRaspberry PiからAVS (Alexa Voice Services) を使ってみましたが、今回は、Alexa Skills Kitを使ってみたいと思います。
 
 
-## Alexa Skill Kit 概要
+## Alexa Skill Kitとは
 AVSには好みの機能を追加できるSkillという機能があり、「カスタムスキル」と「スマートホームスキル」の2種類を登録することができます。
 
 https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-the-different-types-of-skills

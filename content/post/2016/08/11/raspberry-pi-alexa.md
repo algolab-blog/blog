@@ -80,6 +80,9 @@ Exec=vncserver :1
 StartupNotify=false
 ```
 
+### VNCでRaspberry Piへアクセス
+Macからアクセスする手順は [こちら]({{<ref "post/2016/08/22/ubuntu-tightvnc-server.md#アクセス">}}) をご参照ください。
+
 ### VLCのインストール
 VLC media playerをインストールします。
 
@@ -155,4 +158,5 @@ $ mvn exec:exec
 GUIに出てくるURLにアクセスしてデバイスの登録になります。ここも [公式Doc](https://github.com/amzn/alexa-avs-raspberry-pi#user-content-10---obtain-authorsization-from-login-with-amazon) の画像のとおりです。以上が終わると、AVSを利用できます。
 
 ## 次回予告
-次回はAlexa Skillsを登録して使ってみようと思います。乞うご期待。Don't miss out!
+次回はAlexa Skillsを登録して使ってみようと思います。乞うご期待。Don't miss out!  
+(2016/08/25 公開しました &rarr; [Alexa Skills KitをAWS Lamdaから使う]({{<ref "post/2016/08/29/alexa-skills-kit.md">}}))
