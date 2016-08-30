@@ -4,7 +4,7 @@ tags = [
   "kaldi",
   "ubuntu"
 ]
-title = "Kaldiを使う"
+title = "Kaldiで音声を学習させる 〜ディープラーニングを用いた音声認識ツールキット〜"
 authors = "kawahito"
 date = "2016-08-26T11:54:30+09:00"
 draft = true
@@ -14,21 +14,24 @@ draft = true
 
 ## Kaldiとは
 C++で書かれた音声認識ツールキットでApache Licence 2.0で公開されています。  
-音響モデルにDNN (Deep Neural Network) を用いており、注目を集めています。
+音響モデルにDNN (Deep Neural Network) を用いているのが特長です。
 
-http://kaldi-asr.org/  
-http://kaldi-asr.org/doc/about.html
+http://kaldi-asr.org/
+
+今回は
 
 ## 環境
+Ubuntu 16.04 LTS を用いています。
+{{<ubuntu_16>}}
 
-## ダウンロード
+## Kaldiのダウンロード
 Githubよりダウンロードします。
 ```sh
 $ git clone https://github.com/kaldi-asr/kaldi.git
 ```
 
-## インストール方法
-インストール方法は```INSTALL```ファイルに最新情報が記載されているので確認します。
+## インストール
+インストール方法は```INSTALL```ファイルに最新情報が記載されているので従います。
 
 ```sh
 $ cd kaldi

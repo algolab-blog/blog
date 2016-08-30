@@ -11,7 +11,7 @@
       {{ if eq .Type "post" }}{{ partial "share_this.html" . }}{{ end }}
       {{ .Content }}
       {{ if eq .Type "post" }}{{ partial "share_this.html" . }}{{ end }}
-      {{ partial "author.html" . }}
+      {{ if eq .Type "post" }}{{ partial "author.html" . }}{{ end }}
     </article>
     {{ if eq .Type "post" }}{{ partial "disqus.html" . }}{{ end }}
   </main>
