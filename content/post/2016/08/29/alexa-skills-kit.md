@@ -25,7 +25,7 @@ https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/unders
 {{<img_rel "custom-skill.png">}}
 
 * ピザを注文したり、タクシーを呼んだり色々なことができる
-* Invocation Name (スキルの呼び名のこと、後述) で呼び出す
+* Invocation Name (スキルの呼び名) で呼び出す
 * リクエストは「intent」としてマッピングされる
  - ピザの注文 &rarr; OrderPizza intent
 
@@ -34,28 +34,6 @@ https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/unders
 
 * Smart home device (灯りやエアコンなど) を操作できる
 * Invocation Nameで呼び出すのは不要 
-
-### Invocation Name (スキルの呼び名) のガイドライン
-https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/choosing-the-invocation-name-for-an-alexa-skill
-
-* 原則的に1単語はNG、 Launch phrase(ask, tell, etc...), Amazon, Alexaなどは禁止文字。
-* 呼び出し方には以下の3通りの方法がある
-
-#### リクエストと一緒に呼び出す
->
-“Alexa, Ask Daily Horoscopes for Gemini”  
-“Alexa, Talk to Daily Horoscopes and give me the horoscope for Taurus”  
-“Alexa, give me my Taurus horoscope using Daily Horoscopes”
-
-#### リクエストなしで呼び出す
->
-“Alexa, open Daily Horoscopes”  
-“Alexa, start Daily Horoscopes”  
-“Alexa, ask Daily Horoscopes”
-
-#### Invocation Nameだけで呼び出す
->
-“Alexa, Daily Horoscopes”
 
 ## 今回作るもの
 公式の [ドキュメント](https://developer.amazon.com/appsandservices/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function) と [ポスト](https://developer.amazon.com/public/community/post/TxDJWS16KUPVKO/New-Alexa-Skills-Kit-Template-Build-a-Trivia-Skill-in-under-an-Hour) を参考に、今回は「Color Expert」のSkillを使ってみます。  
