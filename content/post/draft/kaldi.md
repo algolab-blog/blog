@@ -13,15 +13,15 @@ draft = true
 {{<img_rel "kaldi_text_and_logo.png">}}
 
 ## Kaldiとは
-C++で書かれた音声認識ツールキットでApache Licence 2.0で公開されています。  
+C++で書かれた音声認識ツールキットで、Apache Licence 2.0で公開されています。  
 音響モデルにDNN (Deep Neural Network) を用いているのが特長です。
 
 http://kaldi-asr.org/
 
-今回は
+今回はKaldiを動作させ、yesかnoの音声を判別するモデルを学習させてみます。
 
 ## 環境
-Ubuntu 16.04 LTS を用いています。
+Vagrant上のUbuntu 16.04 LTSを用いています。
 {{<ubuntu_16>}}
 
 ## Kaldiのダウンロード
@@ -31,7 +31,7 @@ $ git clone https://github.com/kaldi-asr/kaldi.git
 ```
 
 ## インストール
-インストール方法は```INSTALL```ファイルに最新情報が記載されているので従います。
+インストール方法は```INSTALL```ファイルに最新情報が記載されているので、それに従います。
 
 ```sh
 $ cd kaldi
@@ -47,11 +47,9 @@ go to tools/  and follow INSTALL instructions there.
 > (2)  
 go to src/ and follow INSTALL instructions there.
 
-``tools``および``src``フォルダの```INSTALL```を見れば良いようです。
+``tools``および``src``フォルダの```INSTALL```を見れば良いようなので、まず``tools``から確認していきます。
 
 ## toolsのインストール
-まず``tools``から確認していきます。
-
 ```sh
 $ cd tools
 $ cat INSTALL
@@ -90,8 +88,6 @@ one of those scripts, it will tell you what to do.
 * ```make```コマンドでインストールを行う
  - マルチコアのCPUの場合は```j```オプションをつけることでインストールが並列化できる (早くなる)
 
-早速進めましょう。
-
 ### 依存関係のチェック
 スクリプトを用いて依存関係をチェックします。
 
@@ -120,7 +116,7 @@ $ sudo apt-get install -y libatlas3-base
 $ sudo ln -s -f bash /bin/sh
 ```
 
-もう一度、依存関係をチェックすると、OKとなりました。
+再度依存関係をチェックすると、OKとなりました。
 
 ```sh
 $ extras/check_dependencies.sh
@@ -166,7 +162,7 @@ in parallel if you have multiple CPUs, for instance
 For more information, see documentation at http://kaldi-asr.org/doc/  
 and click on "The build process (how Kaldi is compiled)".  
 
-以下の3つのコマンドを叩けば良いので、一つずつ叩いていきます。
+以下の3つのコマンドを叩けば良いようので、一つずつ叩いていきます。
 
 ```sh
 $ ./configure
@@ -197,3 +193,9 @@ not exactly challenging.
 $ cd s5
 $ sh run.sh
 ```
+
+> %WER 0.00 [ 0 / 232, 0 ins, 0 del, 0 sub ] exp/mono0a/decode_test_yesno/wer_10
+
+## 動作詳細
+サンプルのコードが何をやっているのか、詳しく見ていきます。
+

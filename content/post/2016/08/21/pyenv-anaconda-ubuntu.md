@@ -11,18 +11,9 @@ title = "pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環�
 (最終更新日: 2016/08/22)
 
 ## OSバージョン
-OSバージョンは下記の通りです。  
-```sh
-$ cat /etc/lsb-release
-DISTRIB_ID=Ubuntu
-DISTRIB_RELEASE=16.04
-DISTRIB_CODENAME=xenial
-DISTRIB_DESCRIPTION="Ubuntu 16.04.1 LTS"
-```
-```sh
-$ uname -a
-Linux vagrant 4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
-```
+OSバージョンは下記の通りです。
+
+{{<ubuntu_16>}}
 
 ## pyenv + Anaconda の環境を構築
 Python環境は、pyenv + Anacodaを用いて構築します。  
