@@ -1,0 +1,9 @@
+{{ $authorKey := .Params.authors | urlize }}
+{{ $author := index .Site.Data.authors $authorKey }}
+<div id="author" class="row">
+  <img src="/images/authors/{{ $authorKey }}.png" id="avater" class="col" />
+  <div>
+    <div id="name"><a href="/authors/{{ $authorKey }}">{{ $author.name }}</a></div>
+    <div>{{ $author.description }}</div>
+  </div>
+</div>

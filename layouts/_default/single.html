@@ -8,9 +8,10 @@
       {{ partial "article_meta.html" . }}
     </div>
     <article>
+      {{ partial "share_this.html" . }}
       {{ .Content }}
       {{ partial "share_this.html" . }}
-
+      {{ partial "author.html" . }}
     </article>
     {{ partial "disqus.html" . }}
   </main>

@@ -137,3 +137,27 @@ ul.tags li {
 ul.taxonomies a {
   color: #111;
 }
+
+/* share_this */
+div#share-this {
+  margin: 0;
+}
+
+/* author */
+div#author {
+  margin-top: 20px;
+  padding: 20px 10px;
+  border: 1px solid #ddd;
+}
+
+div#author #avater{
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+div#author div#name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
