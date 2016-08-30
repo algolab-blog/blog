@@ -16,6 +16,10 @@
   target.text("ドラえもん誕生まであと"+diff+"日");
 </script>
 
+<script>
+  $("a[href^='http']").not('[href*="'+location.hostname+'"]').attr("target","_blank").after(' <i class="fa fa-external-link"></i>');
+</script>
+
 <script src="/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 

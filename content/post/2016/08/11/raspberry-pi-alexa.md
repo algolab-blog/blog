@@ -41,8 +41,8 @@ Raspberry Pi用のディスプレイを用意してもよいですが、今回�
 以下の記事を参考に進めました。  
 [Raspberry Pi 3にRaspbianをインストール(Mac OS X を使用)](http://qiita.com/onlyindreams/items/acc70807b69b43e176bf)
 
-* Rasbian Jessie は ```2016-05-27``` リリースのものを用いました。
-* ddコマンドのオプションで、ブロックサイズを大文字 (```bs=1M```) で指定
+* Rasbian Jessie は ```2016-05-27``` リリースのものを用いました
+* ddコマンドのオプションで、ブロックサイズは大文字 (```bs=1M```) で指定しました
 
 ### 起動手順
 1. MicroSD、LAN、 USBマイクロフォン、スピーカーを接続しておきます。
@@ -87,7 +87,7 @@ VLC media playerをインストールします。
 # install
 $ sudo apt-get install vlc-nox vlc-data
 # add env vars
-$ echo "export LD_LIBRARY_PATH=/usr/lib/vlc" >> ~/.bashrc
+$ echo "export LD_LIBRARY_PATH=/usr/lib/vlc:$LD_LIBRARY_PATH" >> ~/.bashrc
 $ echo "export VLC_PLUGIN_PATH=/usr/lib/vlc/plugins" >> ~/.bashrc
 $ soure ~/.bashrc
 ```
