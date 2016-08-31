@@ -8,7 +8,7 @@ title = "pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環�
 
 筆者の機械学習系のPython開発環境は、[Vagrant](https://www.vagrantup.com/) を用いた [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) 上に構築しています。  
 ここでは、画像認識、音声認識、自然言語処理などに必要な環境をオールインワンで構築する手順をまとめます。  
-(最終更新日: 2016/08/22)
+(最終更新日: 2016/08/31)
 
 ## OSバージョン
 OSバージョンは下記の通りです。
@@ -81,23 +81,27 @@ $ pip install --upgrade pip
 
 ## 深層学習ライブラリ
 ### TensorFlow
-Googleの深層学習ライブラリ。``conda``経由で最新バージョンを一発でインストールします。  
 https://www.tensorflow.org/
+
+Googleの深層学習ライブラリ。``conda``経由で最新バージョンを一発でインストールします。
 
 ```sh
 $ conda install -y -c jjhelmus tensorflow
 ```
 
 ### Chainer
-PFNの深層学習ライブラリ  
 http://chainer.org/
+
+PFNの深層学習ライブラリ。
+
 ```sh
 $ pip install chainer
 ```
 
 ### Keras
-TensorFlowおよびTheanoのラッパー。同時にTheanoも入ります。  
 https://keras.io/
+
+TensorFlowおよびTheanoのラッパー。同時にTheanoも入ります。
 
 ```sh
 $ pip install keras
@@ -105,39 +109,51 @@ $ pip install keras
 
 ## 画像認識
 ### ImageMagick
-画像処理ライブラリ。``conda``経由で本体もまとめてインストールします。  
 http://imagemagick.org/script/index.php
+
+画像処理ライブラリ。``conda``経由で本体もまとめてインストールします。
 
 ```sh
 $ conda install -y -c kalefranz imagemagick
 ```
 ### OpenCV
-コンピュータビジョンライブラリ  
 http://opencv.org/
+
+コンピュータビジョンライブラリ。
 
 ```sh
 $ conda install -y -c menpo opencv3
 ```
 ### Dlib
-画像処理系が充実している機械学習ライブラリ。```cmake```と```boost-python```も同時にインストールします。  
 http://dlib.net/
+
+画像処理系が充実している機械学習ライブラリ。```cmake```と```boost-python```も同時にインストールします。
+
 ```sh
 $ sudo apt-get install libboost-python-dev cmake
 $ conda install -y -c wordsforthewise dlib
 ```
 
 ### Selective Search
-Alpacaが提供しているSelectiveSearchに特化したライブラリ  
 https://github.com/AlpacaDB/selectivesearch
+
+Alpacaが提供しているSelectiveSearchに特化したライブラリ。
 
 ```sh
 $ pip install selectivesearch
 ```
 
 ## 音声認識
+### Kaldi
+http://kaldi.org/
+
+深層学習を用いた音声認識ツールキット。下記の記事を参照してください。  
+[Kaldiで音声を学習させる 〜ディープラーニングを用いた音声認識ツールキット〜]({{<ref "post/2016/08/31/kaldi.md">}})
+
 ### FFmpeg
-音声・動画処理ライブラリ。Ubuntu16.04から本体は``apt-get``で入るようになりました。  
 https://ffmpeg.org/
+
+音声・動画処理ライブラリ。Ubuntu16.04から本体は``apt-get``で入るようになりました。  
 
 ```sh
 $ sudo apt install -y ffmpeg
@@ -146,16 +162,18 @@ $ pip install ffmpy
 
 ## 自然言語処理
 ### MeCab
-形態素解析エンジン。本体は``apt-get``でインストールします。  
 http://taku910.github.io/mecab/
+
+形態素解析エンジン。本体は``apt-get``でインストールします。  
 
 ```sh
 $ sudo apt-get -y install libmecab-dev mecab mecab-ipadic mecab-ipadic-utf8
 $ pip install mecab-python3
 ```
 ### gensim
-トピックモデルのライブラリ  
 https://radimrehurek.com/gensim/
+
+トピックモデルのライブラリ。
 
 ```sh
 $ pip install gensim
@@ -163,13 +181,17 @@ $ pip install gensim
 
 ## 強化学習
 ### OpenAI Gym
-強化学習のトレーニング環境  
 https://gym.openai.com/
+
+強化学習のトレーニング環境。
+
 ```sh
 $ pip install gym
 ```
 
 ## その他便利ツール
 ### TightVNC Server
+http://www.tightvnc.com/
+
 リモートデスクトップ環境。下記の記事を参照してください。  
 [Ubuntu 16.04 LTSにXcfeとTightVNC Serverでリモートデスクトップ環境を構築する]({{<ref "post/2016/08/22/ubuntu-tightvnc-server.md">}})
