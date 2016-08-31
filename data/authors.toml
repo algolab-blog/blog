@@ -1,3 +1,5 @@
 [kawahito]
 name = "Shinpei Kawahito"
-description = "Pythonで機械学習周りのコードを書いています。天下一品好き。"
+description = """
+Pythonで機械学習周りのコードを書いています。天下一品好き。
+"""

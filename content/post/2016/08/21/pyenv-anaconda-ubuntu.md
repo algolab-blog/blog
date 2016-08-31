@@ -145,7 +145,7 @@ $ pip install selectivesearch
 
 ## 音声認識
 ### Kaldi
-http://kaldi.org/
+http://kaldi-asr.org/
 
 深層学習を用いた音声認識ツールキット。下記の記事を参照してください。  
 [Kaldiで音声を学習させる 〜ディープラーニングを用いた音声認識ツールキット〜]({{<ref "post/2016/08/31/kaldi.md">}})
