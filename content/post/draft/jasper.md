@@ -13,8 +13,8 @@ date = "2016-08-26T21:04:48+09:00"
 {{<youtube "UzaqNF6NlBA">}}
 
 ## Jasper Projectとは
-音声コントロールのアプリを簡単に作れるオープンソースプロジェクトです。  
-バックエンドには [CMU Sphix](http://cmusphinx.sourceforge.net/) の PocketSphinx を STT (Speech-to-Text) エンジンとして用いています。  
+音声操作のアプリケーションを簡単に作れるオープンソースプロジェクトです。  
+バックエンドには [CMU Sphix](http://cmusphinx.sourceforge.net/) を用いています。  
 また、サードパーティモジュールも多数公開されており、GoogleCalendar等と容易に連携させることが可能です。  
 http://jasperproject.github.io/documentation/modules/
 
