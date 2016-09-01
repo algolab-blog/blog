@@ -84,7 +84,7 @@ one of those scripts, it will tell you what to do.
 
 概要は以下の通りです。
 
-* ```extras/check_dependencies.sh```で依存関係をチェック
+* ```extras/check_dependencies.sh```で依存関係をチェックする
 * ```make```コマンドでインストールを行う
  - マルチコアのCPUの場合は```j```オプションをつけることでインストールが並列化できる (早くなる)
 
@@ -138,6 +138,41 @@ $ nproc
 $ sudo make -j 4
 ```
 
+以下のライブラリがインストールされます。
+
+* OpenFst
+ - 重み付き有限状態トランスデューサー (WFST) を扱うライブラリ
+* sph2pipe
+ - SPHEREファイルのコンバータ
+* sclite
+ - 音声認識結果をスコアリングするためのライブラリ
+* ATLAS
+ - 線形代数ライブラリ
+* CLAPACK
+ - 線形代数ライブラリ
+
+### (オプション) 言語モデルツールキットのインストール
+また、言語モデルのツールキット (IRSTLM や SRILM) を使用する場合は追加でインストールします。
+
+#### IRSTLM
+```sh
+$ extras/install_irstlm.sh
+```
+
+#### SRLM
+下記からファイルをダウンロードし、``srilm.tgz``というファイル名にした上で、``tools/``直下に配置します。  
+http://www.speech.sri.com/projects/srilm/download.html
+
+また、インストールにはGNU awkが必要なので導入します。
+```sh
+$ sudo apt-get install -y gawk
+```
+
+本体をインストールします。
+```sh
+$ extras/install_srilm.sh
+```
+
 ## srcのインストール
 ```sh
 $ cd ../src
@@ -163,7 +198,7 @@ in parallel if you have multiple CPUs, for instance
 For more information, see documentation at http://kaldi-asr.org/doc/  
 and click on "The build process (how Kaldi is compiled)".  
 
-以下の3つのコマンドを叩けば良いようので、一つずつ叩いていきます。
+以下の3つのコマンドを叩けば良いようなので、一つずつ叩いていきます。
 
 ```sh
 $ ./configure

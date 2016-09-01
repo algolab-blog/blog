@@ -1,4 +1,4 @@
-{{ $authorKey := .Params.authors | urlize }}
+{{ $authorKey :=  default .Title (index .Params "authors") | urlize }}
 {{ $author := index .Site.Data.authors $authorKey }}
 <div id="author" class="row">
   <img src="/images/authors/{{ $authorKey }}.png" id="avater" class="col" />

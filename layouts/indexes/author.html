@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 <main id="list" class="authors" role="main">
-  <div class="article-header"><h1>{{ (index .Site.Data.authors (.Title | urlize)).name }}</h1></div>
+  <div class="article-header"><h1>{{ (index .Site.Data.authors (.Title | urlize)).name }} の記事一覧</h1></div>
 	{{ $paginator := .Paginate .Data.Pages }}
   {{ range $paginator.Pages }}
   	<div class="summary">

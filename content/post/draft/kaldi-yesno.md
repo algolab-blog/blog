@@ -26,17 +26,16 @@ fi
 まず、下記URLからデータをダウンロード、解凍しています。  
 http://www.openslr.org/resources/1/waves_yesno.tar.gz
 
-実行すると、``waves_yesno``以下に8khz にサンプリングされた60個の音声ファイルができます。  
+実行すると、``waves_yesno``以下に8khz にサンプリングされた60個のwavファイルができます。  
 それぞれのファイルには``yes``か``no``のどちらかの音声が8個収録されており、内容はファイル名で示されています。  
 
-``yes``が``1``、``no``が``0``で表現されており、  
-例えば下記のファイルは``no, no, no, no, yes, yes, yes, yes``という音声が収録されていることを示します。  
+``yes``が``1``、``no``が``0``で表現されており、例えば下記のファイルは``no, no, no, no, yes, yes, yes, yes``という音声が収録されていることを示します。  
 
 ```sh
 0_0_0_0_1_1_1_1.wav
 ```
 
-音声ファイルを再生するには下記のコマンドを叩きます。
+音声ファイルの中身を確認するには下記のコマンドを叩きます。
 
 ```sh
 $ aplay waves_yesno/0_0_0_0_1_1_1_1.wav
@@ -50,34 +49,66 @@ $ aplay waves_yesno/0_0_0_0_1_1_1_1.wav
 local/prepare_data.sh waves_yesno
 ```
 
-先ほどの60個のファイルの半分を訓練データ、残り半分をテストデータに分割し、諸々加工しています。
-最終的に、``data/train_yesno``および``data/test_yesno``以下にデータが作成されます。
+先ほどの60個のファイルを半分ずつ訓練データ、テストデータに分割し、後に必要となる形式に加工しています。  
+最終的に、``data/train_yesno``および``data/test_yesno``以下に4つのファイルが作成されます。
 
 ```sh
 $ ls -1 data/train_yesno
-spk2utt
-text
-utt2spk
-wav.scp
+spk2utt # 話者と音声データの対応を記述したファイル。ここでは話者は一人なのでglobalとしている。
+text    # 音声データとその内容を記述したファイル
+utt2spk # spk2uttの逆で、音声データと話者の対応を記述したファイル。
+wav.scp # 音声データとそのファイル名の対応を記述したファイル
 ```
 
-### 辞書の作成
+### 2-2. 辞書の作成
 ```sh
 local/prepare_dict.sh
 ```
 
-``data/local/dict``以下に辞書ファイルを作ります。
-``YES``, ``NO``, ``SIL(無音)``の3つを定義しています。
+``data/local/dict``以下に辞書ファイルを作ります。  
+``YES``、``NO``の2つを定義します。また、OOV (辞書に存在しない単語) は```SIL```で表現しています。
 
-### 言語の準備
 ```sh
-utils/prepare_lang.sh --position-dependent-phones false data/local/dict "<SIL>" data/local/lang data/lang
+$ ls -1 data/local/dict
+lexicon.txt           # 単語と音素の対応を記述したファイル (無音含む)
+lexicon_words.txt     # 単語と音素の対応を記述したファイル (有音のみ)
+nonsilence_phones.txt # 有音の音素を記述したファイル
+optional_silence.txt
+silence_phones.txt    # 無音の音素を定義したファイル
 ```
+
+### 2-3. 言語の準備
+```sh
+utils/prepare_lang.sh \
+  --position-dependent-phones false \
+  data/local/dict \ # 辞書ファイルのディレクトリ
+  "<SIL>" \         # OOV
+  data/local/lang \ # tmpディレクトリ
+  data/lang         # アウトプットディレクトリ
+```
+
+以下、``utils/prepare_lang.sh``の中身を抜粋していきます。
+
+#### 2-3-1. 辞書ファイルのチェック
+```sh
+! utils/validate_dict_dir.pl $srcdir && \
+  echo "*Error validating directory $srcdir*" && exit 1;
+```
+辞書ファイルの存在および中身のチェックをしています。
+
+#### 2-3-2. 
+if [[ ! -f $srcdir/lexiconp.txt ]]; then
+  echo "**Creating $srcdir/lexiconp.txt from $srcdir/lexicon.txt"
+  perl -ape 's/(\S+\s+)(.+)/${1}1.0\t$2/;' < $srcdir/lexicon.txt > $srcdir/lexiconp.txt || exit 1;
+fi
+```
+
+http://www.openfst.org/
 
 ### 言語モデルの作成
 ```sh
 local/prepare_lm.sh
-```
+``
 
 ## 特徴抽出
 ```sh
@@ -90,7 +121,23 @@ done
 
 音声から特徴量を抽出します。特徴量としてはMFCC (メル周波数ケプストラム係数) を用いています。
 
-## 訓練
+## トレーニング
+```sh
+# Mono training
+steps/train_mono.sh --nj 1 --cmd "$train_cmd" \
+  --totgauss 400 \
+  data/train_yesno data/lang exp/mono0a
+```
 
-### 
+### Graph compilation
+```sh
+utils/mkgraph.sh --mono data/lang_test_tg exp/mono0a exp/mono0a/graph_tgpr
+```
 
+### デコード
+```sh
+steps/decode.sh --nj 1 --cmd "$decode_cmd" \
+    exp/mono0a/graph_tgpr data/test_yesno exp/mono0a/decode_test_yesno
+
+for x in exp/*/decode*; do [ -d $x ] && grep WER $x/wer_* | utils/best_wer.sh; done
+```
