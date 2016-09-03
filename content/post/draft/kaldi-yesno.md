@@ -56,7 +56,7 @@ local/prepare_data.sh waves_yesno
 $ ls -1 data/train_yesno
 spk2utt # 話者と音声データの対応を記述したファイル。ここでは話者は一人なのでglobalとしている。
 text    # 音声データとその内容を記述したファイル
-utt2spk # spk2uttの逆で、音声データと話者の対応を記述したファイル。
+utt2spk # spk2uttの逆で、音声データと話者の対応を記述したファイル
 wav.scp # 音声データとそのファイル名の対応を記述したファイル
 ```
 

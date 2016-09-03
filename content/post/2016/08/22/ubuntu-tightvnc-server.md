@@ -35,7 +35,7 @@ $ sudo apt-get install tightvncserver
 ```
 
 ### 起動設定
-VNCサーバーからXcfeを起動するように設定を行います。
+VNCサーバーからデスクトップを起動するように設定を行います。
 
 ```sh
 $ vi ~/.vnc/xstartup
