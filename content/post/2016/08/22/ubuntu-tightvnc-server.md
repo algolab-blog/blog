@@ -34,6 +34,37 @@ http://www.tightvnc.com/
 $ sudo apt-get install tightvncserver
 ```
 
+### 初回起動
+諸々設定ファイルを作成するため、一度起動します。  
+初回起動時には、アクセスする際のパスワードが求められるので入力します。  
+view-only のパスワードは特に必要ないので、```n```を選択しました。
+
+```sh
+$ vncserver
+
+You will require a password to access your desktops.
+
+Password:
+Verify:
+Would you like to enter a view-only password (y/n)? n
+...
+```
+
+以下のような起動メッセージが出ると思います。
+```sh
+New 'X' desktop is hostname:1
+```
+
+最後の数字 (ここでは1) がデスクトップ番号となるので覚えておきます。
+
+### 停止
+以下のコマンドで停止します。  
+最後にデスクトップ番号を指定します。
+
+```sh
+$ vncserver -kill :1
+```
+
 ### 起動設定
 VNCサーバーからデスクトップを起動するように設定を行います。
 
@@ -55,32 +86,24 @@ xrdb $HOME/.Xresources
 lxsession -s LXDE &
 ```
 
-### 起動
-初回起動時には、アクセスする際のパスワードが求められるので入力します。  
-view-only のパスワードは特に必要ないので、```n```を選択しました。
-
+### 再度起動
 ```sh
 $ vncserver
-
-You will require a password to access your desktops.
-
-Password:
-Verify:
-Would you like to enter a view-only password (y/n)? n
-...
 ```
 
 ### アクセス
 MacのFinderから```移動``` > ```サーバーへ接続```で、VNCクライアントを起動します。  
-アドレスバーには```vnc://[サーバーのIPアドレス]:5901```を入力してください。
+アドレスバーには```vnc://[サーバーのIPアドレス]:5901```を入力してください。  
+正確には、ポート番号は5900 + デスクトップ番号となるので、環境によって変えてください。
+
 {{<img_rel "vnc_client.png">}}
 
 パスワードによる認証の後、リモートデスクトップにアクセスできます。
 
 {{<img_rel "vnc_server.png">}}
 
-### 停止
-以下のコマンドで停止します。
+### 再度停止
+自動起動の設定を行うため、再度停止します。
 ```sh
 $ vncserver -kill :1
 ```
@@ -118,7 +141,8 @@ $ sudo systemctl enable vncserver@1.service
 ```
 
 #### 起動
-以下のコマンドで手動で起動できるようになります。
+以下のコマンドで手動で起動できるようになります。  
+``@``以下がデスクトップ番号です。
 
 ```sh
 $ sudo systemctl start vncserver@1
