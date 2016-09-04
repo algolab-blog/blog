@@ -8,7 +8,7 @@ title = "pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環�
 
 筆者の機械学習系のPython開発環境は、[Vagrant](https://www.vagrantup.com/) を用いた [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) 上に構築しています。  
 ここでは、画像認識、音声認識、自然言語処理などに必要な環境をオールインワンで構築する手順をまとめます。  
-(最終更新日: 2016/08/31)
+(最終更新日: 2016/09/04)
 
 ## OSバージョン
 OSバージョンは下記の通りです。
@@ -130,7 +130,7 @@ http://dlib.net/
 画像処理系が充実している機械学習ライブラリ。```cmake```と```boost-python```も同時にインストールします。
 
 ```sh
-$ sudo apt-get install libboost-python-dev cmake
+$ sudo apt-get -y install libboost-python-dev cmake
 $ conda install -y -c wordsforthewise dlib
 ```
 
