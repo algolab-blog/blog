@@ -15,6 +15,9 @@ date = "2016-08-29T16:10:04+09:00"
 
 前回はRaspberry PiからAVS (Alexa Voice Services) を使ってみましたが、今回は、Alexa Skills Kitを使ってみたいと思います。
 
+## 完成したもの
+Alexaが自分の好みの色を覚えてくれるようになりました。
+{{<youtube HAOPIuFDdik>}}
 
 ## Alexa Skill Kitとは
 AVSには好みの機能を追加できるSkillという機能があり、「カスタムスキル」と「スマートホームスキル」の2種類を登録することができます。
@@ -69,7 +72,9 @@ Lambda function codeなど他の項目はデフォルトのままでも問題あ
 
 {{<img_rel "alexa-skills-kit-4.png">}}
 
-トリガーのテスト画面になります。念のため``Test``をクリックすると、デフォルトのテストであるAlexa Start Sessionが走ります。実行結果がSuceededとなること、ログ出力に先ほどのLambda function codeの出力結果が表示されていればOKです。
+トリガーのテスト画面になります。
+``Test``をクリック &rarr; ``Alexa Start Session``を選択 &rarr; ``save and test``をクリックと進むとTestが走ります。
+実行結果がSuceededとなること、ログ出力に先ほどのLambda function codeの出力結果が表示されていればOKです。
 
 {{<img_rel "alexa-skills-kit-5.png">}}
 
