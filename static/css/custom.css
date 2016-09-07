@@ -71,6 +71,10 @@ article img {
   margin: 0;
 }
 
+article img.border {
+  border: 1px solid #ddd;
+}
+
 figcaption p {
   font-size: 12px;
   margin: 5px;
