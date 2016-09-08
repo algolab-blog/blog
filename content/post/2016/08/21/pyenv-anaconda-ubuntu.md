@@ -8,7 +8,7 @@ title = "pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環�
 
 筆者の機械学習系のPython開発環境は、[Vagrant](https://www.vagrantup.com/) を用いた [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) 上に構築しています。  
 ここでは、画像認識、音声認識、自然言語処理などに必要な環境をオールインワンで構築する手順をまとめます。  
-(最終更新日: 2016/09/04)
+(最終更新日: 2016/09/08)
 
 ## OSバージョン
 OSバージョンは下記の通りです。
@@ -59,7 +59,7 @@ $ pyenv install -l | grep anaconda3
 ```sh
 $ pyenv install anaconda3-4.1.0
 $ pyenv global anaconda3-4.1.0
-$ echo 'export PATH="$PYENV_ROOT/versions/anaconda3-4.1.0/bin/:$PATH"' >> ~/.bashrc
+$ echo 'export PATH="$PYENV_ROOT/versions/anaconda3-4.1.0/bin:$PATH"' >> ~/.bashrc
 $ source ~/.bashrc
 ```
 
