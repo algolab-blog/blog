@@ -8,7 +8,7 @@ title = "pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環�
 
 筆者の機械学習系のPython開発環境は、[Vagrant](https://www.vagrantup.com/) を用いた [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) 上に構築しています。  
 ここでは、画像認識、音声認識、自然言語処理などに必要な環境をオールインワンで構築する手順をまとめます。  
-(最終更新日: 2016/09/08)
+(最終更新日: 2016/09/10)
 
 ## OSバージョン
 OSバージョンは下記の通りです。
@@ -153,11 +153,19 @@ http://kaldi-asr.org/
 ### FFmpeg
 https://ffmpeg.org/
 
-音声・動画処理ライブラリ。Ubuntu16.04から本体は``apt-get``で入るようになりました。  
+音声・動画処理ライブラリ。
 
 ```sh
-$ sudo apt install -y ffmpeg
-$ pip install ffmpy
+$ conda install -y -c conda-forge ffmpeg
+```
+
+### librosa
+https://github.com/librosa/librosa
+
+音声・音楽解析ライブラリ。
+
+```sh
+$ conda install -y -c conda-forge librosa
 ```
 
 ## 自然言語処理
