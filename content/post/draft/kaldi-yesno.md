@@ -26,7 +26,7 @@ fi
 まず、下記URLからデータをダウンロード、解凍しています。  
 http://www.openslr.org/resources/1/waves_yesno.tar.gz
 
-実行すると、``waves_yesno``以下に8khz にサンプリングされた60個のwavファイルができます。  
+実行すると、``waves_yesno``以下に、8khzにサンプリングされた60個のwavファイルができます。  
 それぞれのファイルには``yes``か``no``のどちらかの音声が8個収録されており、内容はファイル名で示されています。  
 
 ``yes``が``1``、``no``が``0``で表現されており、例えば下記のファイルは``no, no, no, no, yes, yes, yes, yes``という音声が収録されていることを示します。  
@@ -54,10 +54,10 @@ local/prepare_data.sh waves_yesno
 
 ```sh
 $ ls -1 data/train_yesno
-spk2utt # 話者と音声データの対応を記述したファイル。ここでは話者は一人なのでglobalとしている。
-text    # 音声データとその内容を記述したファイル
-utt2spk # spk2uttの逆で、音声データと話者の対応を記述したファイル
-wav.scp # 音声データとそのファイル名の対応を記述したファイル
+spk2utt # 話者と音声データの対応が記述されている。ここでは話者は一人なのでglobalとしている。
+text    # 音声データとその内容が記述されている
+utt2spk # spk2uttの逆で、音声データと話者の対応が記述されている
+wav.scp # 音声データとそのファイルパスの対応が記述されている
 ```
 
 ### 2-2. 辞書の作成
@@ -70,11 +70,11 @@ local/prepare_dict.sh
 
 ```sh
 $ ls -1 data/local/dict
-lexicon.txt           # 単語と音素の対応を記述したファイル (無音含む)
-lexicon_words.txt     # 単語と音素の対応を記述したファイル (有音のみ)
-nonsilence_phones.txt # 有音の音素を記述したファイル
+lexicon.txt           # 単語と音素の対応を定義 (無音含む)
+lexicon_words.txt     # 単語と音素の対応を定義 (有音のみ)
+nonsilence_phones.txt # 有音の音素を定義
 optional_silence.txt
-silence_phones.txt    # 無音の音素を定義したファイル
+silence_phones.txt    # 無音の音素を定義
 ```
 
 ### 2-3. 言語の準備
@@ -87,28 +87,12 @@ utils/prepare_lang.sh \
   data/lang         # アウトプットディレクトリ
 ```
 
-以下、``utils/prepare_lang.sh``の中身を抜粋していきます。
-
-#### 2-3-1. 辞書ファイルのチェック
-```sh
-! utils/validate_dict_dir.pl $srcdir && \
-  echo "*Error validating directory $srcdir*" && exit 1;
-```
-辞書ファイルの存在および中身のチェックをしています。
-
-#### 2-3-2. 
-if [[ ! -f $srcdir/lexiconp.txt ]]; then
-  echo "**Creating $srcdir/lexiconp.txt from $srcdir/lexicon.txt"
-  perl -ape 's/(\S+\s+)(.+)/${1}1.0\t$2/;' < $srcdir/lexicon.txt > $srcdir/lexiconp.txt || exit 1;
-fi
-```
-
 http://www.openfst.org/
 
 ### 言語モデルの作成
 ```sh
 local/prepare_lm.sh
-``
+```
 
 ## 特徴抽出
 ```sh
