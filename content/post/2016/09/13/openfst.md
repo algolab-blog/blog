@@ -52,7 +52,8 @@ http://www.openfst.org/twiki/bin/view/FST/FstDownload
 筆者の環境では、Kaldiの導入時に同時にインストールを行いました。  
 [Kaldiで音声を学習させる 〜ディープラーニングを用いた音声認識ツールキット〜]({{<ref "post/2016/08/31/kaldi.md">}})
 
-以下のコマンドが叩ければ正常にインストールが完了しています。
+以下のコマンドが叩ければ、WFST作成に進むことができます。
+
 ```sh
 $ fstcompile --help
 ```
