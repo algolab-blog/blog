@@ -58,9 +58,8 @@ $ fstcompile --help
 ```
 
 ### WFST作成
-ここからは下記のリンクを参考に進めます。
-
-http://www.openfst.org/twiki/bin/view/FST/FstQuickTour
+ここからは下記のリンクを参考に進めます。  
+http://www.openfst.org/twiki/bin/view/FST/FstQuickTour  
 http://kaldi-asr.org/doc/tutorial_looking.html
 
 具体的には下図に示すWFSTを作成してみます。
