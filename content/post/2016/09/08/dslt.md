@@ -46,3 +46,38 @@ https://docs.com/kos59125/2122?c=Tqf7Mh
 
 ## Reproducebility 100倍 Dockerマン / {{<twitter teramonagi>}}
 {{<slideshare lopySOx7zWRxHf>}}
+
+## 時と場所で選ぶ機械学習 / {{<twitter vaaaaanquish>}}
+
+## 鋼鉄の錬金術師あらため出会い系錬金術師による、マリオＡＩから分かる人生をクリアするのに大事なn個の共有 / {{<twitter tomomoto_LV3>}}
+
+## 1回くらいやってみよう: Kaggle初挑戦 / {{<twitter siero5335>}}
+{{<slideshare E0IEcrUIu8pAJt>}}
+http://statchiraura.blog.fc2.com/blog-entry-31.html
+
+## 俺たちの戦いはこれからだ / {{<twitter gepuro>}}
+{{<slideshare cBPffWqv3tp1zJ>}}
+http://blog.gepuro.net/archives/159
+
+## グラフ作成 3分クッキング / {{<twitter wn_seko>}}
+
+## GBDTを使ったfeature transformationの適用例 / {{<twitter Quasi_quant2010>}}
+{{<slideshare 7PBZv0Enkb05Gg>}}
+
+## 機械学習するな機会学習しろ / {{<twitter wonder_zone>}}
+{{<slideshare mPSXhvjQW6QQba>}}
+
+## CDTV『O2O最前線情報をお伝えします』/ {{<github yumebayashi>}}
+
+## データサイエンティストの憂鬱 / {{<twitter shoe116>}}
+{{<slideshare 4oyoc61JGEaqbl>}}
+http://shoe116.hatenablog.com/entry/2016/04/04/084113
+
+## Otonaの夏休み課題 / {{<twitter u_ribo>}}
+
+## {Rcpp}が支えるパッケージ / {{<twitter yamano357>}}
+{{<speakerdeck 9278831c5202498d935eab1dd403845c>}}
+http://qiita.com/yamano357/items/9846adac05b0c11f5cac  
+http://rpubs.com/yamano357/202054
+
+## 最後に喋るのはこの俺だ / {{<twitter yamakatu>}}
