@@ -167,9 +167,13 @@ MyColorIsIntent my favorite color is {Color}
 
 残りの設定項目に Publishing infomation, Privacy & Compliance がありますが、これらはAlexa Skillをpubulishingするときに必要で、手元の実機での実行には必要ないので今回は割愛します。
 
-# 動作確認
+## 動作確認
 まずAmazon Developer Consoleと同じアカウントでAmazon Alexaにログインして[Skill一覧画面](http://alexa.amazon.com/spa/index.html#skills/your-skills)から先ほど作成したSkillがあることを確認します。
 
 {{<img_rel "alexa-skills-kit-11.png">}}
 
-あとは下記の動画のように話しかけて動作するか確認します。
+あとは冒頭の動画のように話しかけて動作するか確認します。
+
+## 次回予告
+次回はソースコードの中身を見てみます。  
+(2016/09/28 公開しました &rarr; [AlexaスキルとLambdaファンクションはどのように連携しているか]({{<ref "post/2016/09/28/alexa-color-expert.md">}}))
