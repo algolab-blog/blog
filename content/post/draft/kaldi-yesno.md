@@ -87,16 +87,17 @@ utils/prepare_lang.sh \
   data/lang         # アウトプットディレクトリ
 ```
 
-http://www.openfst.org/
+ここからはfstという馴染みのないファイルが出てきますので、以下を一読してから先に進むことをお勧めします。  
+[重み付き有限状態トランスデューサ (WFST) をOpenFstで作成する]({{<ref "post/2016/09/13/openfst.md">}})
 
-### 言語モデルの作成
+### 2-4. 言語モデルの作成
 ```sh
 local/prepare_lm.sh
 ```
 
 ## 特徴抽出
 ```sh
-for x in train_yesno test_yesno; do 
+for x in train_yesno test_yesno; do
  steps/make_mfcc.sh --nj 1 data/$x exp/make_mfcc/$x mfcc
  steps/compute_cmvn_stats.sh data/$x exp/make_mfcc/$x mfcc
  utils/fix_data_dir.sh data/$x
