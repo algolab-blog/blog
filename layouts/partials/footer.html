@@ -51,32 +51,26 @@
 {{ end }}
 
 {{ if eq (printf "%v" .Site.BaseURL) "http://blog.algolab.jp/" }}
-  {{ if .Params.tags }}
-    {{ $category := "" }}
-    {{ $tags := .Site.Data.tags }}
-    {{ range first 1 .Params.tags }}
-      {{ $category := index $tags (printf "%s" .) }}
-    {{ end }}
-    {{ with .Site.Params.loyalTracker }}
-      <script type='text/javascript'>
-      (function(a,h,k,o,t,y){
-       a['LoyalTrackerObject']=o;a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};
-       a[o].l=1*new Date();t=h.createElement('script');y=h.getElementsByTagName('script')[0];
-       t.async=1;t.src=k;y.parentNode.insertBefore(t,y);
-       })(window, document, '//lt.logly.co.jp/static/app.js', '_lgy_lt');
-      _lgy_lt('set', 'media', '{{ . }}');
-      {{ if $category }}
-        _lgy_lt('set', 'category', '{{ $category }}');
+  {{ $lt := .Site.Params.loyalTracker }}
+  {{ if $lt }}
+    <script type='text/javascript'>
+    (function(a,h,k,o,t,y){
+     a['LoyalTrackerObject']=o;a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};
+     a[o].l=1*new Date();t=h.createElement('script');y=h.getElementsByTagName('script')[0];
+     t.async=1;t.src=k;y.parentNode.insertBefore(t,y);
+     })(window, document, '//lt.logly.co.jp/static/app.js', '_lgy_lt');
+    _lgy_lt('set', 'media', '{{ $lt }}');
+    {{ if .Params.tags }}
+      {{ $tags := .Site.Data.tags }}
+      {{ range first 1 .Params.tags }}
+        _lgy_lt('send', 'category', '{{ index $tags (printf "%s" .) }}');
       {{ end }}
-      _lgy_lt('send', 'pageview');
-      _lgy_lt('send', 'read');
-      </script>
     {{ end }}
+    _lgy_lt('send', 'pageview');
+    _lgy_lt('send', 'read');
+    </script>
   {{ end }}
 {{ end }}
-
-<script>
-</script>
 
 <script type="text/javascript" async
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
