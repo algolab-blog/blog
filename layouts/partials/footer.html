@@ -65,7 +65,9 @@
        t.async=1;t.src=k;y.parentNode.insertBefore(t,y);
        })(window, document, '//lt.logly.co.jp/static/app.js', '_lgy_lt');
       _lgy_lt('set', 'media', '{{ . }}');
-      _lgy_lt('set', 'category', '{{ $category }}');
+      {{ if $category }}
+        _lgy_lt('set', 'category', '{{ $category }}');
+      {{ end }}
       _lgy_lt('send', 'pageview');
       _lgy_lt('send', 'read');
       </script>
