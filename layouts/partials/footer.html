@@ -58,7 +58,8 @@
      a['LoyalTrackerObject']=o;a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};
      a[o].l=1*new Date();t=h.createElement('script');y=h.getElementsByTagName('script')[0];
      t.async=1;t.src=k;y.parentNode.insertBefore(t,y);
-     })(window, document, '//lt.logly.co.jp/static/app.js', '_lgy_lt');
+     // })(window, document, '//lt.logly.co.jp/static/app.js', '_lgy_lt');
+     })(window, document, '//loyal-tracker.appspot.com/static/app.js', '_lgy_lt');
     _lgy_lt('set', 'media', '{{ $lt }}');
     {{ if .Params.tags }}
       {{ $tags := .Site.Data.tags }}
