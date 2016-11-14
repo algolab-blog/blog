@@ -15,6 +15,9 @@ TensorFlowを用いて画風変換を試してみました。上記画像は学�
 GitHubで「neuralart」と検索すると実装例がいくつか出てきますので、そのうちの一つを動作させてみます。  
 https://github.com/ckmarkoh/neuralart_tensorflow
 
+なお、環境構築については下記の記事をご参照ください。Python2系での動作を確認しています。  
+[【随時更新】pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環境をオールインワンで整える]({{ref "post/2016/08/21/pyenv-anaconda-ubuntu.md"}})
+
 ## ソースコードをダウンロード
 ```sh
 $ git clone https://github.com/ckmarkoh/neuralart_tensorflow.git
@@ -45,3 +48,7 @@ $ python main.py
 $ cd results
 $ convert -delay 50 -loop 0 0*00.png animation.gif
 ```
+
+## 論文
+画風変換の元となる論文はこちらです。  
+[A Neural Algorithm of Artistic Style](https://arxiv.org/abs/1508.06576)

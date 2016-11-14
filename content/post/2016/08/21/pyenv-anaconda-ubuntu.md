@@ -3,12 +3,12 @@ authors = "kawahito"
 date = "2016-08-21T17:22:48+09:00"
 draft = false
 tags = ["development-environment", "ubuntu"]
-title = "pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環境をオールインワンで整える【随時更新】"
+title = "【随時更新】pyenv + Anaconda (Ubuntu 16.04 LTS) で機械学習のPython開発環境をオールインワンで整える"
 +++
 
 筆者の機械学習系のPython開発環境は、[Vagrant](https://www.vagrantup.com/) を用いた [Ubuntu (16.04 LTS)](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04) 上に構築しています。  
 ここでは、画像認識、音声認識、自然言語処理などに必要な環境をオールインワンで構築する手順をまとめます。  
-(最終更新日: 2016/11/11)
+(最終更新日: 2016/11/14)
 
 ## OSバージョン
 OSバージョンは下記の通りです。
@@ -40,7 +40,7 @@ $ source ~/.bashrc
 ```
 
 ### Anacondaのインストール
-まず、最新のAnaconda (Python 3系) のバージョンを確認します。
+まず、最新のAnaconda (Python3系) のバージョンを確認します。
 ```sh
 $ pyenv install -l | grep anaconda3
   anaconda3-2.0.0
@@ -67,6 +67,24 @@ Pythonの環境を確認します。
 ```sh
 $ python --version
 Python 3.5.1 :: Anaconda 4.1.0 (64-bit)
+```
+
+## Python2系の導入
+ここまでで、Python3系の環境が構築できました。  
+場合によって、Python2系の環境が必要になることもあるので、導入しておきます。
+
+```sh
+$ conda create -n py27con python=2.7 anaconda
+```
+
+上記環境に切り替えるには以下のコマンドを叩きます。
+```sh
+$ source activate py27
+```
+
+なお、下記で環境を抜けることができます。
+```sh
+$ source deacivate
 ```
 
 ## Pythonライブラリのインストール
