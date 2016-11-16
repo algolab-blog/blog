@@ -64,7 +64,7 @@
     {{ if .Params.tags }}
       {{ $tags := .Site.Data.tags }}
       {{ range first 1 .Params.tags }}
-        _lgy_lt('send', 'category', '{{ index $tags (printf "%s" .) }}');
+        _lgy_lt('set', 'category', '{{ index $tags (printf "%s" .) }}');
       {{ end }}
     {{ end }}
     _lgy_lt('send', 'pageview');
