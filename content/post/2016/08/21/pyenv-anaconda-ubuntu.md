@@ -79,7 +79,13 @@ $ conda create -n py27con python=2.7 anaconda
 
 上記環境に切り替えるには以下のコマンドを叩きます。
 ```sh
-$ source activate py27
+$ source activate py27con
+```
+
+Python環境が切り替わっていることを確認します。
+```sh
+$ python --version
+Python 2.7.12 :: Anaconda 4.1.0 (64-bit)
 ```
 
 なお、下記で環境を抜けることができます。
