@@ -3,11 +3,10 @@ authors = "kawahito"
 date = "2016-08-07T15:46:48+09:00"
 draft = false
 tags = ["ai-training", "image-recognition", "cnn"]
+series = "ai-training"
 title = "ディープラーニング徹底入門 〜AIトレーニング第1回〜"
 +++
 
-弊社で実施している [AIトレーニング]({{<ref "post/2016/07/25/ai-training.md">}}) の実況中継シリーズです。  
-前回の内容は [AIトレーニングキックオフ 〜ハムケツを認識したい〜]({{<ref "post/2016/08/01/ai-training-kick-off.md">}}) をご覧ください。  
 今回は、ディープラーニングのイメージを掴んでもらうためにAさんにお話した内容をお届けします。
 
 ## 画像認識とは？

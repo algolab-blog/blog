@@ -6,11 +6,9 @@ tags = [
   "speech-recognition",
   "amazon-echo",
 ]
+series = "amazon-echo"
 title = " Alexa Skill (Amazon Echo) を公開したので開発上のポイントをまとめてみる 〜Birthday Reminder〜"
 +++
-
-こちらの記事の続きとなります。  
-[AlexaスキルとLambdaファンクションはどのように連携しているか]({{<ref "post/2016/09/28/alexa-color-expert.md">}})
 
 今回は、オリジナルのスキルを作ってマーケットに公開したので、その中で色々分かったことをまとめてみます。
 

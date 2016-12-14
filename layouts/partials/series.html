@@ -1,0 +1,17 @@
+{{ $series := .Params.series }}
+{{ if $series }}
+  <div class="series">
+    {{ $perma_link:= .Permalink}}
+    <ol reversed data-header="連載記事">
+    {{ range $page := (where .Site.Pages ".Params.series" $series) }}
+      <li>
+        {{ if eq $perma_link $page.Permalink }}
+          {{ $page.Title }}
+        {{ else }}
+          <a href={{ $page.Permalink }}>{{ $page.Title }}</a>
+        {{ end }}
+      </li>
+    {{ end }}
+    </ol>
+  </div>
+{{ end }}

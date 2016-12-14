@@ -2,7 +2,8 @@
 authors = "kawahito"
 date = "2016-07-25T16:35:26+09:00"
 draft = false
-tags= ["ai-training"]
+tags = ["ai-training"]
+series = "ai-training"
 title = "AIトレーニングはじめました"
 +++
 
@@ -34,4 +35,3 @@ title = "AIトレーニングはじめました"
 
 ## 次回予告
 次回はAさんのキックオフの内容についてお届けします。  
-(2016/8/1 公開しました &rarr; [AIトレーニングキックオフ 〜ハムケツを認識したい〜]({{<ref "post/2016/08/01/ai-training-kick-off.md">}}))

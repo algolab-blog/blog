@@ -5,13 +5,11 @@ tags = [
   "amazon-echo",
   "raspberry-pi"
 ]
+series = "amazon-echo"
 title = "AlexaスキルとLambdaファンクションはどのように連携しているか"
 authors = "kawahito"
 date = "2016-09-28T16:26:57+09:00"
 +++
-
-こちらの記事の続きとなります。  
-[Alexa Skills KitをAWS Lamdaから使う]({{<ref "post/2016/08/29/alexa-skills-kit.md">}})
 
 前回はサンプルとして用意されている「Color Expert」のAlexaスキルをLambdaファンクションを利用して動かしてみました。  
 今回は「Color Expert」を例としてAlexaスキルとLambdaファンクションがどのように連携しているか説明したいと思います。

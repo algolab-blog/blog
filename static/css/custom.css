@@ -160,3 +160,21 @@ div#author div#name {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+/* series */
+div.series {
+  padding: 20px 10px;
+  border: 1px solid #ddd;
+}
+
+div.series ol:before {
+  display: block;
+  content:attr(data-header);
+  font-weight: bold;
+  margin-left: -30px;
+  margin-bottom: .5em;
+}
+
+div.series ol {
+  margin-left: 30px;
+}

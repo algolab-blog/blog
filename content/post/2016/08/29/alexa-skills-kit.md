@@ -5,13 +5,11 @@ tags = [
   "amazon-echo",
   "raspberry-pi"
 ]
+series = "amazon-echo"
 title = "Alexa Skills KitをAWS Lamdaから使う"
 authors = "kawahito"
 date = "2016-08-29T16:10:04+09:00"
 +++
-
-こちらの記事の続きとなります。  
-[Amazon Echoを6,000円で自作する 〜Raspberry Pi 3 + Alexa Voice Services (AVS)〜]({{<ref "post/2016/08/11/raspberry-pi-alexa.md">}})
 
 前回はRaspberry PiからAVS (Alexa Voice Services) を使ってみましたが、今回は、Alexa Skills Kitを使ってみたいと思います。
 
@@ -176,4 +174,3 @@ MyColorIsIntent my favorite color is {Color}
 
 ## 次回予告
 次回はソースコードの中身を見てみます。  
-(2016/09/28 公開しました &rarr; [AlexaスキルとLambdaファンクションはどのように連携しているか]({{<ref "post/2016/09/28/alexa-color-expert.md">}}))
