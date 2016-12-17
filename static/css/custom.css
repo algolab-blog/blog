@@ -11,6 +11,11 @@ header h2 {
   color: #333;
 }
 
+/* table */
+table {
+	width: 100%;
+}
+
 /* link decoration */
 a:hover {
   text-decoration: underline;
@@ -149,6 +154,11 @@ div#author {
   border: 1px solid #ddd;
 }
 
+div#author #author-header {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
 div#author #avater{
   width: 100px;
   height: 100px;
@@ -156,7 +166,6 @@ div#author #avater{
 }
 
 div#author div#name {
-  font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
 }

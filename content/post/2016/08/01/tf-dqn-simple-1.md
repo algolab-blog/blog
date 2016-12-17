@@ -3,6 +3,7 @@ authors = "kawahito"
 date = "2016-08-01T22:06:25+09:00"
 draft = false
 tags = ["reinforcement-learning", "dqn", "tensorflow"]
+series = "tf-dqn-simple"
 title = "超シンプルにTensorFlowでDQN (Deep Q Network) を実装してみる 〜導入編〜"
 +++
 
@@ -29,7 +30,7 @@ DQNに限らず、ディープラーニングのモデルを学習させよう�
 {{<img_rel "demo-catch_ball.gif">}}
 
 ### 概要
-具体的には、上図のように上から落ちてくるボールをキャッチする、というタスクを学習させます。  
+具体的には、上図のように上から落ちてくるボールをキャッチする、というゲームを学習させます。  
 TensorFlowで実装しており、ソースコードは下記に公開しています。  
 https://github.com/algolab-inc/tf-dqn-simple
 

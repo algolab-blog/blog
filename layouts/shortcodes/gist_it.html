@@ -1,0 +1,5 @@
+{{ $user    := .Get 0 }}
+{{ $repo    := .Get 1 }}
+{{ $source  := .Get 2 }}
+
+<script src="http://gist-it.appspot.com/http://github.com/{{ $user }}/{{ $repo }}/blob/master/{{ $source }}"></script>

@@ -18,7 +18,7 @@ Selenium + PhantomJS でDjangoアプリケーションのテストをしてい�
 以下の2つのファイルを用意します。`test.html`は`http://localhost/test.html`で読み込めることを前提としています。
 
 test.html
-```
+```html
 <!DOCTYPE html>
 <script>
   var hoge = 1;

@@ -1,9 +1,14 @@
 {{ $authorKey :=  default .Title (index .Params "authors") | urlize }}
 {{ $author := index .Site.Data.authors $authorKey }}
 <div id="author" class="row">
-  <img src="/images/authors/{{ $authorKey }}.png" id="avater" class="col" />
+  <div id="author-header">
+    著者紹介
+  </div>
   <div>
-    <div id="name"><a href="/authors/{{ $authorKey }}">{{ $author.name }}</a></div>
-    <div>{{ $author.description }}</div>
+    <img src="/images/authors/{{ $authorKey }}.png" id="avater" class="col" />
+    <div>
+      <div id="name"><a href="/authors/{{ $authorKey }}">{{ $author.name }}</a></div>
+      <div>{{ $author.description }}</div>
+    </div>
   </div>
 </div>
