@@ -1,8 +1,8 @@
 +++
 title = "超シンプルにTensorFlowでDQN (Deep Q Network) を実装してみる 〜実装編①  ゲームを作る〜"
 authors = "kawahito"
-date = "2016-12-16T17:13:14+09:00"
-draft = true
+date = "2016-12-17T17:02:04+09:00"
+draft = false
 tags = [
   "reinforcement-learning",
   "dqn",
