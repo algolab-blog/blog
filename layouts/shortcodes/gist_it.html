@@ -2,6 +2,5 @@
 {{ $repo    := .Get 1 }}
 {{ $source  := .Get 2 }}
 {{ $slice   := default "" (.Get 3) }}
-{{ $footer  := default "" (.Get 4) }}
 
-<script src="http://gist-it.appspot.com/http://github.com/{{ $user }}/{{ $repo }}/blob/master/{{ $source }}?slice={{ $slice }}&footer={{ $footer }}"></script>
+<script src="http://gist-it.appspot.com/http://github.com/{{ $user }}/{{ $repo }}/blob/master/{{ $source }}?slice={{ $slice }}"></script>
