@@ -6,7 +6,7 @@ tags = [
   "tensorflow"
 ]
 series = "tf-dqn-simple"
-title = "超シンプルにTensorFlowでDQN (Deep Q Network) を実装してみる 〜実装編②  学習の流れを理解する〜"
+title = "超シンプルにTensorFlowでDQN (Deep Q Network) を実装してみる 〜解説編②  学習の流れを理解する〜"
 authors = "kawahito"
 date = "2016-12-19T18:33:39+09:00"
 +++
