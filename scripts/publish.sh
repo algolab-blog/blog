@@ -15,7 +15,7 @@ fi
 
 images=$(grep "img_rel" "content/post/$date/$name.md")
 if [ "$images" ] && [ -d "static/images/post/draft/$name" ]; then
-  mkdir -p "static/images/post/$date/$name"
+  mkdir -p "static/images/post/$date/"
   mv "static/images/post/draft/$name" "static/images/post/$date/"
 fi
 

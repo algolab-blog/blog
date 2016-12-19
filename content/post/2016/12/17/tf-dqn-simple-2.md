@@ -1,5 +1,5 @@
 +++
-title = "超シンプルにTensorFlowでDQN (Deep Q Network) を実装してみる 〜実装編①  ゲーム (環境) を作る〜"
+title = "超シンプルにTensorFlowでDQN (Deep Q Network) を実装してみる 〜解説編①  ゲーム (環境) の実装を理解する〜"
 authors = "kawahito"
 date = "2016-12-17T17:02:04+09:00"
 draft = false
@@ -12,7 +12,7 @@ series = "tf-dqn-simple"
 +++
 
 今回から、実装編についてお届けします。  
-本記事では、学習させるゲーム (環境) の部分について、重要な箇所を抜粋して解説します。
+本記事では、学習させるゲーム (環境) の部分について、解説します。
 
 対象とするソースコードは下記となります。  
 https://github.com/algolab-inc/tf-dqn-simple/blob/master/catch_ball.py
@@ -43,23 +43,24 @@ player_length | 3 | プレイヤーの横方向の長さ
 続いて、ゲームの更新処理を行う`update`メソッドを見ていきましょう。
 
 ### 引数
-{{<gist_it "algolab-inc" "tf-dqn-simple" "catch_ball.py?slice=17:24">}}
+{{<gist_it "algolab-inc" "tf-dqn-simple" "catch_ball.py" "17:24">}}
 `update`メソッドは引数として`action`を受け取ります。`action`はプレイヤーの行動を表すもので、`0,1,2`のいずれかの数値で表現しており、それぞれ「何もしない」「左に動く」「右に動く」ことを示します。
 
 ### プレイヤーの位置の更新
-{{<gist_it "algolab-inc" "tf-dqn-simple" "catch_ball.py?slice=25:35">}}
+{{<gist_it "algolab-inc" "tf-dqn-simple" "catch_ball.py" "25:35">}}
 
 プレイヤーの位置を更新しています。ゲーム盤からはみ出さないように制御しているのがポイントです。
 
 ### ボールの位置の更新
-{{<gist_it "algolab-inc" "tf-dqn-simple" "catch_ball.py?slice=36:37">}}
+{{<gist_it "algolab-inc" "tf-dqn-simple" "catch_ball.py" "36:37">}}
 
 こちらは単純に、下に1つずらすという処理をしています。
 
 ### 得点判定
-{{<gist_it "algolab-inc" "tf-dqn-simple" "catch_ball.py?slice=41:49">}}
+{{<gist_it "algolab-inc" "tf-dqn-simple" "catch_ball.py" "41:49">}}
 
 ボールがゲーム盤の下端に来た時に、ゲーム終了フラグをセット (`self.terminal = True`) した上で、得点判定処理を行います。プレイヤーの範囲内にボールがあればキャッチできたとみなし `+1点` (`self.reward = 1`)、そうでなければキャッチできなかったとして、`-1点` (`self.reward = -1`)、としています。
 
-## 次回予告
-次回は、ゲームを学習する部分（エージェント）について解説します。
+## まとめ
+今回は、ゲーム (環境) の部分について、重要な箇所を抜粋して解説しました。  
+次回は、ゲームを学習する流れについて見ていきます。

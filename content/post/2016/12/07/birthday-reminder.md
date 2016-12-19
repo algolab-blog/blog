@@ -41,16 +41,16 @@ Alexa Skillを起動している最中（セッション内) ではデータ保�
 本スキルでは、以下のようなやり取りをすることができます。
 
 ### 誕生日を登録する
-> User: "Tom's birthday is July seven."  
-> Skill: "I now know Tom's birthday is July seven."
+> __User:__ "Tom's birthday is July seven."  
+> __Skill:__ "I now know Tom's birthday is July seven."
 
 ### 登録した人の誕生日を調べる
-> User: "When was Tom born on?"  
-> Skill: "Tom's birthday is Jul seven."
+> __User:__ "When was Tom born on?"  
+> __Skill:__ "Tom's birthday is Jul seven."
 
 ### 登録した誕生日に生まれた人を調べる
-> User: "Who were born on July seven?"  
-> Skill: "Tom were born on Jul seven."
+> __User:__ "Who were born on July seven?"  
+> __Skill:__ "Tom were born on Jul seven."
 
 
 人名と誕生日の認識には、Slot Typeの枠組みを利用しました。人名には `AMAZON.US_FIRST_NAME` を使用し、人名だけでなく母親や兄弟の誕生日も登録できるように`my mother`, `my brother`なども `AMAZON.US_FIRST_NAME` を拡張して利用できるようにしました。誕生日の日付の認識では `AMAZON.DATE` を使用しています。
