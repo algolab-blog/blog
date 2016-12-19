@@ -1,5 +1,5 @@
 +++
-title = "超シンプルにTensorFlowでDQN (Deep Q Network) を実装してみる 〜実装編①  ゲームを作る〜"
+title = "超シンプルにTensorFlowでDQN (Deep Q Network) を実装してみる 〜実装編①  ゲーム (環境) を作る〜"
 authors = "kawahito"
 date = "2016-12-17T17:02:04+09:00"
 draft = false
@@ -12,7 +12,7 @@ series = "tf-dqn-simple"
 +++
 
 今回から、実装編についてお届けします。  
-本記事では、学習させるゲームの部分について、重要な箇所を抜粋して解説します。
+本記事では、学習させるゲーム (環境) の部分について、重要な箇所を抜粋して解説します。
 
 対象とするソースコードは下記となります。  
 https://github.com/algolab-inc/tf-dqn-simple/blob/master/catch_ball.py
