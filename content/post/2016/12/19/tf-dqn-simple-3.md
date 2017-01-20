@@ -14,7 +14,7 @@ date = "2016-12-19T18:33:39+09:00"
 今回は、学習の流れについて解説します。
 
 対象とするソースコードは下記となります。  
-https://github.com/algolab-inc/tf-dqn-simple/blob/master/train.py  
+https://github.com/algolab-inc/tf-dqn-simple/blob/master/train.py
 
 
 ## 学習の流れ
