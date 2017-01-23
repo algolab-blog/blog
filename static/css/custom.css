@@ -154,21 +154,36 @@ div#author {
   border: 1px solid #ddd;
 }
 
-div#author #author-header {
+div#author-header {
   font-weight: bold;
   margin-bottom: 1em;
 }
 
-div#author #avater{
+div#author-content {
+  display: flex;
+  margin-bottom: 1em;
+}
+
+div#author-content #avater{
   width: 100px;
   height: 100px;
   margin-right: 10px;
 }
 
-div#author div#name {
+div#author-content div#name {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: .5em;
 }
+
+div#author-footer {
+  display: flex;
+}
+
+div#author-footer img {
+  height: 2em;
+  margin-right: .5em;
+}
+
 
 /* series */
 div.series {
