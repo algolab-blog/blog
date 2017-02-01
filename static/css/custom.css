@@ -164,22 +164,33 @@ div#author-content {
   margin-bottom: 1em;
 }
 
-div#author-content #avater{
+div#author-content #avater {
   width: 100px;
   height: 100px;
   margin-right: 10px;
 }
 
-div#author-content div#name {
-  font-weight: bold;
-  margin-bottom: .5em;
+div#author-content #content {
+  width: 100%;
 }
 
-div#author-footer {
+div#author-content #name {
+  font-weight: bold;
+  margin-bottom: .5em;
+  width: 100%;
+}
+
+div#author-content #description {
+  margin-bottom: .5em;
+  width: 100%;
+  word-break: break-all;
+}
+
+div#author-content #social{
   display: flex;
 }
 
-div#author-footer img {
+div#author-content #social img {
   height: 2em;
   margin-right: .5em;
 }

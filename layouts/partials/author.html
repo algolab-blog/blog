@@ -6,21 +6,21 @@
   </div>
   <div id="author-content">
     <img src="/images/authors/{{ $authorKey }}.png" id="avater" />
-    <div>
+    <div id="content">
       <div id="name"><a href="/authors/{{ $authorKey }}">{{ $author.name }}</a></div>
-      <div>{{ $author.description }}</div>
+      <div id="description">{{ $author.description }}</div>
+      <div id="social">
+        {{ if $author.twitter }}
+          <a href="https://twitter.com/{{ $author.twitter }}" fa-ignore="true">
+            <img src="/images/icons/twitter.png" />
+          </a>
+        {{ end }}
+        {{ if $author.facebook }}
+          <a href="https://facebook.com/{{ $author.facebook }}" fa-ignore="true">
+            <img src="/images/icons/facebook.png" />
+          </a>
+        {{ end }}
+      </div>
     </div>
-  </div>
-  <div id="author-footer">
-    {{ if $author.twitter }}
-      <a href="https://twitter.com/{{ $author.twitter }}" fa-ignore="true">
-        <img src="/images/icons/twitter.png" />
-      </a>
-    {{ end }}
-    {{ if $author.facebook }}
-      <a href="https://facebook.com/{{ $author.facebook }}" fa-ignore="true">
-        <img src="/images/icons/facebook.png" />
-      </a>
-    {{ end }}
   </div>
 </div>
