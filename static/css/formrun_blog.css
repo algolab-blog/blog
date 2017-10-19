@@ -20,16 +20,40 @@
 }
 textarea{
     height: 120px;
+}
+.formrun textarea,
+.formrun input,
+.formrun button{
     -webkit-transition: height .3s;
     transition: height .3s;
+    -webkit-transition: width .3s;
+    transition: width .3s;
 }
 textarea:focus {
     height: 250px;
 }
+.formrun button.formrun_submit {
+    font-size: medium;
+    border-radius: 0;
+    background: -moz-linear-gradient(top, #FFF 0%, #EEE);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#EEE));
+    border: 1px solid #DDD;
+    color: #111;
+    padding: 10px 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+.formrun button.formrun_submit:hover {
+    background: -moz-linear-gradient(top, #EFEFEF 0%, #EEE);
+    background: -webkit-gradient(linear, left top, left bottom, from(#EFEFEF), to(#EEE));
+}
 @media screen and (min-width: 0px) and (max-device-width: 450px) {
     .formrun_wrap,
     .formrun input[type="text"],
-    .formrun textarea {
+    .formrun textarea ,
+    .formrun button{
         width: 100%;
     }
 }
@@ -38,5 +62,8 @@ textarea:focus {
     .formrun input[type="text"],
     .formrun textarea {
         width: 600px;
+    }
+    .formrun button {
+        width: 300px;
     }
 }
