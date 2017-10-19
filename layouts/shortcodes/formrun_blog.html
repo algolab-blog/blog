@@ -1,0 +1,24 @@
+<div class="formrun_wrap">
+<!-- class, action, methodを変更しないでください -->
+<form class="formrun" action="https://form.run/api/v1/r/aw6igz17y2faznlvz4z4cnuh" method="post">
+    <!-- ↓自由に要素を追加・編集することができます -->
+    <div class="form_section">
+        <label>お名前</label> [必須]<br />
+        <input name="お名前" type="text" data-formrun-required />
+        <div data-formrun-show-if-error="お名前">お名前を正しく入力してください</div>
+    </div>
+
+    <div class="form_section">
+        <label>メールアドレス</label> [必須]<br />
+        <input name="メールアドレス" type="text" data-formrun-type="email" data-formrun-required />
+        <div data-formrun-show-if-error="メールアドレス">メールアドレスを正しく入力してください</div>
+    </div>
+
+    <div class="form_section">
+        <label>お問い合わせ</label> [必須]<br />
+        <textarea name="お問い合わせ" data-formrun-required></textarea>
+        <div data-formrun-show-if-error="お問い合わせ">お問い合わせ入力してください</div>
+    </div>
+    <button type="submit" data-formrun-error-text="未入力の項目があります" data-formrun-submitting-text="送信中...">送信</button>
+</form>
+</div>
