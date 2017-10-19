@@ -1,0 +1,41 @@
+.formrun_wrap{
+    margin: 0 auto;
+}
+.formrun .form_section{
+    margin-bottom: 15px;
+}
+.formrun label{
+    font-size: medium;
+}
+.formrun input[type="text"],
+.formrun textarea {
+    padding: 0.3em;
+    outline: none;
+    border: 1px solid #DDD;
+    font-size: 16px;
+    width: 100%;
+}
+textarea{
+    height: 120px;
+}
+.formrun textarea{
+    -webkit-transition: height .3s;
+    transition: height .3s;
+}
+textarea:focus {
+    height: 250px;
+}
+.formrun button.formrun_submit {
+    font-size: medium;
+    border: 1px solid #ccc;
+    color: #111;
+    padding: 10px 30px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.formrun button.formrun_submit:hover {
+    background: #eee;
+}
+.formrun .error_message{
+    color: #f00;
+}

@@ -14,4 +14,4 @@ http://www.algolab.jp/
 info@algolab.jp  
 
 ## お問い合わせ
-{{< contact >}}
+{{< formrun_blog >}}
