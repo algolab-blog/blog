@@ -1,0 +1,42 @@
+.formrun_wrap{
+    margin: 0 auto;
+}
+.formrun .form_section{
+    margin-bottom: 15px;
+}
+.formrun label{
+    font-size: medium;
+    font-weight: bold;
+}
+.formrun input[type="text"],
+.formrun textarea {
+    padding: 0.8em;
+    outline: none;
+    border: 1px solid #DDD;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 16px;
+}
+textarea{
+    height: 120px;
+    -webkit-transition: height .3s;
+    transition: height .3s;
+}
+textarea:focus {
+    height: 250px;
+}
+@media screen and (min-width: 0px) and (max-device-width: 450px) {
+    .formrun_wrap,
+    .formrun input[type="text"],
+    .formrun textarea {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 451px) {
+    .formrun_wrap,
+    .formrun input[type="text"],
+    .formrun textarea {
+        width: 600px;
+    }
+}
