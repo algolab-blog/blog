@@ -36,3 +36,6 @@ textarea:focus {
 .formrun button.formrun_submit:hover {
     background: #eee;
 }
+.formrun .error_message{
+    color: #f00;
+}
