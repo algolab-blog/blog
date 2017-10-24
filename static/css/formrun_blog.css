@@ -1,11 +1,11 @@
 .formrun_wrap{
-    margin: 0 auto;
+    margin: 0 auto 50px auto;
 }
 .formrun .form_section{
     margin-bottom: 15px;
 }
 .formrun label{
-    font-size: medium;
+    /* font-size: medium; */
 }
 .formrun input[type="text"],
 .formrun textarea {
@@ -26,7 +26,7 @@ textarea:focus {
     height: 250px;
 }
 .formrun button.formrun_submit {
-    font-size: medium;
+    /* font-size: medium; */
     border: 1px solid #ccc;
     color: #111;
     padding: 10px 30px;

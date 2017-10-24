@@ -71,20 +71,14 @@ title = "開発プロセスの一部を公開することでシステム開発�
 * 水道橋駅 徒歩13分
 
 ### 参加方法
-「connpass」または「ATND」のイベント参加からお申し込みいただけます。  
-ご希望の日時、時間枠で参加登録を行ってください。担当者よりご返信いたします。
+下記よりお申し込みいただけます。  
+https://form.run/@development-consulting
 
-* connpass
- - https://development-consulting.connpass.com
-* ATND
- - https://atnd.org/groups/development-consulting
-
-また、下記に記載しましたメールおよびお問い合わせフォームからも受付を行なっております。
 
 ## 本取り組みに関してのご質問・お問い合わせ
 下記よりお問い合わせください。
 
-* メール：<a href="mailto:event@algolab.jp">event@algolab.jp</a>
-* お問い合わせフォーム：http://www.algolab.jp/contact/
+* メール：<a href="mailto:info@algolab.jp">info@algolab.jp</a>
+* お問い合わせフォーム：http://blog.algolab.jp/about/#お問い合わせ
 
 
