@@ -72,8 +72,7 @@ title = "開発プロセスの一部を公開することでシステム開発�
 
 ### 参加方法
 下記よりお申し込みいただけます。  
-https://form.run/@development-consulting
-
+http://lp.algolab.jp/development-consulting/customer
 
 ## 本取り組みに関してのご質問・お問い合わせ
 下記よりお問い合わせください。
